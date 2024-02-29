@@ -185,10 +185,10 @@ C9               J2               J10              453.104    0.01       0      
 [PUMPS]
 ;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
 ;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
-BRIDGE_RIVER_CROSS_PUMP J12              J27              C23_pump_curve   OFF      0        0       
+BRIDGE_RIVER_CROSS_PUMP J12              J27              BridgeRiverCross_pumpcurve OFF      0        0       
 WESTRIVER_PUMP   WR_WET_WELL      WESTRIVER_TP     WestRiver_pumpcurve ON       0        0       
 EASTRIVER_PUMP   ER_WETWELL       EASTRIVER_TP     EastRiver_pumpcurve30 ON       0        0       
-P3               OLD_WWTP_PRIMARY_TANK J12              Pump3_curve      ON       0        0       
+P3               OLD_WWTP_PRIMARY_TANK J12              Primary_DW_pumpcurve ON       0        0       
 
 [ORIFICES]
 ;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
@@ -377,11 +377,11 @@ EastRiver_pumpcurve30 Pump4      0          0
 EastRiver_pumpcurve30            3          30        
 EastRiver_pumpcurve30            100        30        
 ;
-Pump3_curve      Pump4      0          20        
-Pump3_curve                 100        20        
+Primary_DW_pumpcurve Pump4      0          20        
+Primary_DW_pumpcurve            100        20        
 ;
-C23_pump_curve   Pump4      0          20        
-C23_pump_curve              100        20        
+BridgeRiverCross_pumpcurve Pump4      0          20        
+BridgeRiverCross_pumpcurve            100        20        
 ;
 Opti-Lake        Storage    0          0         
 Opti-Lake                   1          5000      
