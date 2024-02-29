@@ -54,7 +54,7 @@ Raingage         VOLUME    0:06     1.0      TIMESERIES SCS_Type_III_1yr_24hr_Ha
 [SUBCATCHMENTS]
 ;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
 ;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
-1                Raingage         SU1              5        5        500      0.5      0                        
+1                Raingage         WATER_SUPPLY_RESERVOIR 5        5        500      0.5      0                        
 
 [SUBAREAS]
 ;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
@@ -128,7 +128,7 @@ CSO9             0          FREE                        NO
 [STORAGE]
 ;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Type/Params            SurDepth  Fevap    Psi      Ksat     IMD     
 ;;-------------- -------- ---------- ----------- ---------- ---------------------------- --------- --------          -------- --------
-SU1              2.841    5          4          TABULAR    Opti-Lake                    0         0       
+WATER_SUPPLY_RESERVOIR 2.841    5          3          TABULAR    Opti-Lake                    4         0       
 WR_WET_WELL      0        10         0          CYLINDRICAL 20         20         0        0         0       
 ER_WETWELL       0        10         0          FUNCTIONAL 1000       0          0        0         0       
 OLD_WWTP_PRIMARY_TANK -5       15         0          CYLINDRICAL 90         90         0        30        0       
@@ -194,15 +194,16 @@ OLD_WWTP_PRIMARY_DEWATER_PUMP OLD_WWTP_PRIMARY_TANK J12              Primary_DW_
 ;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
 ;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
 C23_1            J22              J26              SIDE         0          0.65       YES      0         
-OR1              SU1              J9               SIDE         0          0.65       NO       0         
+LAKE_LEVEL_CONTROL_GATE WATER_SUPPLY_RESERVOIR J9               SIDE         0          0.65       NO       0         
 OLD_WWTP_PRIMARY_DIVERSION_GATE J24              OLD_WWTP_PRIMARY_TANK SIDE         0          0.65       NO       0         
 
 [WEIRS]
 ;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf   Coeff. Curve
 ;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- -------- ---------- ---------- ---------- ---------- ----------------
-W1               J22              J25              TRANSVERSE   2          3.33       NO       0        0          YES       
-W2               INT_CSO3         CSO3             TRAPEZOIDAL  6          3.33       NO       0        0          YES       
-W3               INT_CSO4         CSO4             TRAPEZOIDAL  3          3.33       NO       0        0          YES       
+CSO9_REG         J22              J25              TRANSVERSE   2          3.33       NO       0        0          YES       
+CSO3_REG         INT_CSO3         CSO3             TRAPEZOIDAL  6          3.33       NO       0        0          YES       
+CSO4_REG         INT_CSO4         CSO4             TRAPEZOIDAL  3          3.33       NO       0        0          YES       
+EMERGENCY_SPILLWAY WATER_SUPPLY_RESERVOIR J9               TRANSVERSE   5          3.33       NO       0        0          YES       
 
 [XSECTIONS]
 ;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
@@ -253,11 +254,12 @@ C7               CIRCULAR     4                0          0          0          
 C8               CIRCULAR     1                0          0          0          1                    
 C9               CIRCULAR     4                0          0          0          1                    
 C23_1            CIRCULAR     1                0          0          0
-OR1              CIRCULAR     5                0          0          0
+LAKE_LEVEL_CONTROL_GATE CIRCULAR     5                0          0          0
 OLD_WWTP_PRIMARY_DIVERSION_GATE CIRCULAR     1                0          0          0
-W1               RECT_OPEN    6                3          0          0         
-W2               TRAPEZOIDAL  4                4          0          0         
-W3               TRAPEZOIDAL  6                3          0          0         
+CSO9_REG         RECT_OPEN    6                3          0          0         
+CSO3_REG         TRAPEZOIDAL  4                4          0          0         
+CSO4_REG         TRAPEZOIDAL  6                3          0          0         
+EMERGENCY_SPILLWAY RECT_OPEN    1                15         0          0         
 
 [DWF]
 ;;Node           Constituent      Baseline   Patterns  
@@ -716,7 +718,7 @@ CSO4             -7767004.156       4956453.730
 WESTRIVER_GRAVITY_BYPASS -7767229.403       4957653.059       
 EASTRIVER_GRAVITY_BYPASS -7766599.772       4958274.173       
 CSO9             -7766308.021       4956305.050       
-SU1              -7764565.278       4955953.689       
+WATER_SUPPLY_RESERVOIR -7764565.278       4955953.689       
 WR_WET_WELL      -7767342.455       4957679.735       
 ER_WETWELL       -7766273.998       4958186.010       
 OLD_WWTP_PRIMARY_TANK -7767231.350       4956447.167       
@@ -770,6 +772,8 @@ C31              -7766246.373       4955713.870
 C31              -7766242.814       4955915.580       
 WESTRIVER_PUMP   -7767174.732       4957934.449       
 EASTRIVER_PUMP   -7766510.053       4958269.895       
+EMERGENCY_SPILLWAY -7764540.693       4956017.562       
+EMERGENCY_SPILLWAY -7764629.354       4956056.967       
 
 [Polygons]
 ;;Subcatchment   X-Coord            Y-Coord           
@@ -788,7 +792,7 @@ EASTRIVER_PUMP   -7766510.053       4958269.895
 
 ;;Storage Node   X-Coord            Y-Coord           
 ;;-------------- ------------------ ------------------
-SU1              -7764565.278       4955953.689       
+WATER_SUPPLY_RESERVOIR -7764565.278       4955953.689       
 WR_WET_WELL      -7767342.455       4957679.735       
 ER_WETWELL       -7766273.998       4958186.010       
 OLD_WWTP_PRIMARY_TANK -7767231.350       4956447.167       
