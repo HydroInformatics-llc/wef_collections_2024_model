@@ -188,14 +188,14 @@ C9               J2               J10              453.104    0.01       0      
 BRIDGE_RIVER_CROSS_PUMP J12              J27              BridgeRiverCross_pumpcurve OFF      0        0       
 WESTRIVER_PUMP   WR_WET_WELL      WESTRIVER_TP     WestRiver_pumpcurve ON       0        0       
 EASTRIVER_PUMP   ER_WETWELL       EASTRIVER_TP     EastRiver_pumpcurve30 ON       0        0       
-P3               OLD_WWTP_PRIMARY_TANK J12              Primary_DW_pumpcurve ON       0        0       
+OLD_WWTP_PRIMARY_DEWATER_PUMP OLD_WWTP_PRIMARY_TANK J12              Primary_DW_pumpcurve ON       0        0       
 
 [ORIFICES]
 ;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
 ;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
 C23_1            J22              J26              SIDE         0          0.65       YES      0         
 OR1              SU1              J9               SIDE         0          0.65       NO       0         
-OR2              J24              OLD_WWTP_PRIMARY_TANK SIDE         0          0.65       NO       0         
+OLD_WWTP_PRIMARY_DIVERSION_GATE J24              OLD_WWTP_PRIMARY_TANK SIDE         0          0.65       NO       0         
 
 [WEIRS]
 ;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf   Coeff. Curve
@@ -254,7 +254,7 @@ C8               CIRCULAR     1                0          0          0          
 C9               CIRCULAR     4                0          0          0          1                    
 C23_1            CIRCULAR     1                0          0          0
 OR1              CIRCULAR     5                0          0          0
-OR2              CIRCULAR     1                0          0          0
+OLD_WWTP_PRIMARY_DIVERSION_GATE CIRCULAR     1                0          0          0
 W1               RECT_OPEN    6                3          0          0         
 W2               TRAPEZOIDAL  4                4          0          0         
 W3               TRAPEZOIDAL  6                3          0          0         
