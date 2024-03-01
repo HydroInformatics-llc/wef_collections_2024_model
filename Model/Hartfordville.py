@@ -34,7 +34,7 @@ def post_process_table(sim_handle):
 
     # System Flooding
     system_stats = SystemStats(sim)
-    table_info['FLOODING_VOLUME'] = system_stats.routing_stats['flooding']
+    table_info['FLOODING_VOLUME (KGal)'] = system_stats.routing_stats['flooding'] * u_convert *1000
 
     return table_info
 
