@@ -70,6 +70,7 @@ with Simulation('./Hartfordville_1.inp', \
     lake_level_control_gate = Links(sim)['LAKE_LEVEL_CONTROL_GATE']
     bridge_river_cross_pump = Links(sim)['BRIDGE_RIVER_CROSS_PUMP']
     cso_9_overflow_regulator = Links(sim)['CSO9_REG']
+    cso_9_underflow_gate = Links(sim)['C23_1']
 
     # Pushing initial settings
     old_wwtp_primary_inflow.target_setting = 0
@@ -82,12 +83,13 @@ with Simulation('./Hartfordville_1.inp', \
     for step in sim:
         cso_9_overflow_regulator.target_setting = 0
         bridge_river_cross_pump.target_setting = 0.15
+        cso_9_underflow_gate.target_setting = 0.5
 
     summary_model2 = post_process_table(sim)
 
 # TABLE OUTPUT
 print("|{:27s}|{:15s}|{:15s}|".format(" Volume Type  "," No Control (MG) ", " W Control (MG)  "))
-print("| ------------------------- | --------------- | --------------- |")
+print("|---------------------------|-----------------|-----------------|")
 for key in summary_model1.keys():
     print("| {:25s} | {:15.3f} | {:15.3f} |".format(key,
                                                     summary_model1[key],
