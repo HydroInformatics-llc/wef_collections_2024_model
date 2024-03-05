@@ -56,16 +56,19 @@ with Simulation('./Hartfordville_1.inp') as sim:
     lake_level_control_gate = Links(sim)['LAKE_LEVEL_CONTROL_GATE']
     bridge_river_cross_pump = Links(sim)['BRIDGE_RIVER_CROSS_PUMP']
     cso_9_overflow_regulator = Links(sim)['CSO9_REG']
-
-    # Pushing initial settings
-    old_wwtp_primary_inflow.target_setting = 0
-    old_wwtp_primary_dewater.target_setting = 0
-    lake_level_control_gate.target_setting = 0.2
+    cso_9_underflow_gate = Links(sim)['C23_1']
 
     # Run Simulation
     sim.step_advance(300)
-    for step in sim:
-        pass
+    for ind, step in enumerate(sim):
+        if ind == 0:
+            cso_9_overflow_regulator.target_setting = 0.0
+            old_wwtp_primary_inflow.target_setting = 0
+            old_wwtp_primary_dewater.target_setting = 0
+            # Lake Always draining
+            lake_level_control_gate.target_setting = 0.1
+            cso_9_overflow_regulator.target_setting = 0.0
+            cso_9_underflow_gate.target_setting = 0.7
 
     summary_model1 = post_process_table(sim)
 
@@ -107,6 +110,7 @@ with Simulation('./Hartfordville_1.inp', \
     wr_wet_well = Nodes(sim)["WR_WET_WELL"]
     er_wet_well = Nodes(sim)["ER_WETWELL"]
     water_res = Nodes(sim)["WATER_SUPPLY_RESERVOIR"]
+    cso4_level = Nodes(sim)["INT_CSO4"]
 
     # Creating Handles to Controllable Assets
     old_wwtp_primary_inflow = Links(sim)['OLD_WWTP_PRIMARY_DIVERSION_GATE']
@@ -116,39 +120,31 @@ with Simulation('./Hartfordville_1.inp', \
     cso_9_overflow_regulator = Links(sim)['CSO9_REG']
     cso_9_underflow_gate = Links(sim)['C23_1']
 
-    # Pushing initial settings
-    old_wwtp_primary_inflow.target_setting = 0
-    old_wwtp_primary_dewater.target_setting = 0
-    lake_level_control_gate.target_setting = 0.2
-    cso_9_overflow_regulator.target_setting = 0
-    cso_9_underflow_gate.target_setting = 0.5
-
-    wtrp_control_curve = ControlCurve([0,3,4,5],[0,0,0.5,1])
+    wtrp_control_curve = ControlCurve([0,3,5],[0,0,1])
+    cso_9_reg_control_curve = ControlCurve([0,2.2,2.7],[1,1,0.15])
 
     # Run Simulation
     sim.step_advance(300)
-    for step in sim:
-        # if wr_wet_well.depth >= 6:
-        #     # Emergency State
-        #     bridge_river_cross_pump.target_setting = 1
-        # elif C11_1.flow > 12:
-        #     delta_flow = ( C11_1.flow - 12 ) / 20 #
-        #     #delta_flow *= 2 # Adjustment Factor
-        #     if delta_flow > 1: delta_flow = 1
-        #     #print(delta_flow * 20)
-        #     bridge_river_cross_pump.target_setting = delta_flow
-        #     #print(bridge_river_cross_pump.flow, wr_wet_well.depth)
-        # else:
-        #     bridge_river_cross_pump.target_setting = 0
-        bridge_river_cross_pump.target_setting \
-            = wtrp_control_curve(wr_wet_well.depth)
+    for ind, step in enumerate(sim):
+        if ind == 0:
+            # Pushing initial settings
+            old_wwtp_primary_inflow.target_setting = 0
+            old_wwtp_primary_dewater.target_setting = 0
+            cso_9_overflow_regulator.target_setting = 0.2
+            cso_9_underflow_gate.target_setting = 0.5
 
         # Dewater Reservoir before storm event!
         if sim.current_time <= datetime.datetime(2024, 4, 9, 8, 0, 0):
             lake_level_control_gate.target_setting = 1
         else:
-            #print(sim.current_time, water_res.volume*u_convert, water_res.depth)
             lake_level_control_gate.target_setting = 0.2
+
+        bridge_river_cross_pump.target_setting \
+            = wtrp_control_curve(wr_wet_well.depth)
+
+        cso_9_underflow_gate.target_setting \
+            =  cso_9_reg_control_curve(cso4_level.depth)
+
 
     summary_model2 = post_process_table(sim)
 
