@@ -202,7 +202,7 @@ OLD_WWTP_PRIMARY_DIVERSION_GATE J24              OLD_WWTP_PRIMARY_TANK SIDE     
 ;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- -------- ---------- ---------- ---------- ---------- ----------------
 CSO9_REG         J22              J25              TRANSVERSE   2          3.33       NO       0        0          YES
 CSO3_REG         INT_CSO3         CSO3             TRAPEZOIDAL  5.298       3.33       NO       0        0          YES
-CSO4_REG         INT_CSO4         CSO4             TRAPEZOIDAL  3          3.33       NO       0        0          YES
+CSO4_REG         INT_CSO4         CSO4             TRAPEZOIDAL  4          3.33       NO       0        0          YES
 EMERGENCY_SPILLWAY WATER_SUPPLY_RESERVOIR J9               TRANSVERSE   5          3.33       NO       0        0          YES
 
 [XSECTIONS]

@@ -65,10 +65,9 @@ with Simulation('./Hartfordville_1.inp') as sim:
             cso_9_overflow_regulator.target_setting = 0.0
             old_wwtp_primary_inflow.target_setting = 0
             old_wwtp_primary_dewater.target_setting = 0
-            # Lake Always draining
             lake_level_control_gate.target_setting = 0.1
-            cso_9_overflow_regulator.target_setting = 0.0
-            cso_9_underflow_gate.target_setting = 0.7
+            cso_9_overflow_regulator.target_setting = 0.5
+            cso_9_underflow_gate.target_setting = 1
 
     summary_model1 = post_process_table(sim)
 
@@ -106,6 +105,7 @@ with Simulation('./Hartfordville_1.inp', \
 
     # Monitoring points
     C11_1 = Links(sim)["C11_1"]
+    j21 = Nodes(sim)["J21"]
     rg = RainGages(sim)["Raingage"]
     wr_wet_well = Nodes(sim)["WR_WET_WELL"]
     er_wet_well = Nodes(sim)["ER_WETWELL"]
@@ -121,7 +121,8 @@ with Simulation('./Hartfordville_1.inp', \
     cso_9_underflow_gate = Links(sim)['C23_1']
 
     wtrp_control_curve = ControlCurve([0,3,5],[0,0,1])
-    cso_9_reg_control_curve = ControlCurve([0,2.2,2.7],[1,1,0.15])
+    cso_9_reg_control_curve = ControlCurve([0,3.2,3.7],[1,1,0.15])
+    cso_9_dam_control_curve = ControlCurve([0,7.3,7.8],[0,0,0.1])
 
     # Run Simulation
     sim.step_advance(300)
@@ -129,9 +130,8 @@ with Simulation('./Hartfordville_1.inp', \
         if ind == 0:
             # Pushing initial settings
             old_wwtp_primary_inflow.target_setting = 0
-            old_wwtp_primary_dewater.target_setting = 0
-            cso_9_overflow_regulator.target_setting = 0.2
-            cso_9_underflow_gate.target_setting = 0.5
+            old_wwtp_primary_dewater.target_setting = 0.1
+            cso_9_overflow_regulator.target_setting = 0.0
 
         # Dewater Reservoir before storm event!
         if sim.current_time <= datetime.datetime(2024, 4, 9, 8, 0, 0):
@@ -144,6 +144,18 @@ with Simulation('./Hartfordville_1.inp', \
 
         cso_9_underflow_gate.target_setting \
             =  cso_9_reg_control_curve(cso4_level.depth)
+
+        # Flood Prevention CSO 9
+        cso_9_overflow_regulator.target_setting \
+            = cso_9_dam_control_curve(j21.depth)
+
+        # CSO 9 Prevention - Last Ditch Effort!
+        if j21.depth > 7:
+            bridge_river_cross_pump.target_setting = 0
+            old_wwtp_primary_inflow.target_setting = 1
+        else:
+            old_wwtp_primary_inflow.target_setting = 0
+
 
 
     summary_model2 = post_process_table(sim)
