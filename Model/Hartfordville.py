@@ -41,6 +41,10 @@ def post_process_table(sim_handle):
     system_stats = SystemStats(sim)
     table_info['FLOODING_VOLUME (KGal)'] = system_stats.routing_stats['flooding'] * u_convert *1000
 
+    for n in Nodes(sim):
+        if n.statistics['flooding_volume'] > 0:
+            print(n.nodeid, n.statistics['flooding_volume'])
+
     return table_info
 
 
@@ -102,7 +106,7 @@ with Simulation('./Hartfordville_1.inp', \
             delta_flow = ( C11_1.flow - 12 ) / 20 #
             #delta_flow *= 2 # Adjustment Factor
             if delta_flow > 1: delta_flow = 1
-            print(delta_flow * 20)
+            #print(delta_flow * 20)
             bridge_river_cross_pump.target_setting = delta_flow
             #print(bridge_river_cross_pump.flow, wr_wet_well.depth)
         else:

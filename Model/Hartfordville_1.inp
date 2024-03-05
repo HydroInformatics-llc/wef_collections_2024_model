@@ -194,8 +194,8 @@ OLD_WWTP_PRIMARY_DEWATER_PUMP OLD_WWTP_PRIMARY_TANK J12              Primary_DW_
 ;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime
 ;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
 C23_1            J22              J26              SIDE         0          0.65       YES      0
-LAKE_LEVEL_CONTROL_GATE WATER_SUPPLY_RESERVOIR J9               SIDE         0          0.65       NO       0
-OLD_WWTP_PRIMARY_DIVERSION_GATE J24              OLD_WWTP_PRIMARY_TANK SIDE         0          0.65       NO       0
+LAKE_LEVEL_CONTROL_GATE WATER_SUPPLY_RESERVOIR J9               SIDE         0          0.65       YES       0
+OLD_WWTP_PRIMARY_DIVERSION_GATE J24              OLD_WWTP_PRIMARY_TANK SIDE         0          0.65       YES       0
 
 [WEIRS]
 ;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf   Coeff. Curve
