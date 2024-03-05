@@ -16,7 +16,10 @@ time controls.
 This scope of this code is to run the model as well as be a space where new control
 logic can be developed to operate the various controllable facilities.
 """
-from pyswmm import Simulation, Links, Nodes, SystemStats
+import datetime
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from pyswmm import Simulation, Links, Nodes, SystemStats, RainGages
 
 u_convert=7.481/1.e6 # ft3->MG
 def post_process_table(sim_handle):
@@ -60,9 +63,17 @@ with Simulation('./Hartfordville_1.inp') as sim:
 
     summary_model1 = post_process_table(sim)
 
+
 with Simulation('./Hartfordville_1.inp', \
                 './Hartfordville_ctrl.rpt',
                 './Hartfordville_ctrl.out') as sim:
+
+    # Monitoring points
+    C11_1 = Links(sim)["C11_1"]
+    rg = RainGages(sim)["Raingage"]
+    wr_wet_well = Nodes(sim)["WR_WET_WELL"]
+    er_wet_well = Nodes(sim)["ER_WETWELL"]
+    water_res = Nodes(sim)["WATER_SUPPLY_RESERVOIR"]
 
     # Creating Handles to Controllable Assets
     old_wwtp_primary_inflow = Links(sim)['OLD_WWTP_PRIMARY_DIVERSION_GATE']
@@ -77,13 +88,26 @@ with Simulation('./Hartfordville_1.inp', \
     old_wwtp_primary_dewater.target_setting = 0
     lake_level_control_gate.target_setting = 0
     cso_9_overflow_regulator.target_setting = 0
+    cso_9_underflow_gate.target_setting = 0.5
 
     # Run Simulation
     sim.step_advance(300)
     for step in sim:
-        cso_9_overflow_regulator.target_setting = 0
-        bridge_river_cross_pump.target_setting = 0.15
-        cso_9_underflow_gate.target_setting = 0.5
+        if C11_1.flow > 13:
+            delta_flow = ( C11_1.flow - 13 ) / 20 #
+            if delta_flow > 1: delta_flow = 1
+
+            bridge_river_cross_pump.target_setting = delta_flow
+            #print(bridge_river_cross_pump.flow, wr_wet_well.depth)
+        else:
+            bridge_river_cross_pump.target_setting = 0
+
+        # Dewater Reservoir before storm event!
+        if sim.current_time <= datetime.datetime(2024, 4, 9, 8, 0, 0):
+            lake_level_control_gate.target_setting = 1
+        else:
+            print(sim.current_time, water_res.volume*u_convert, water_res.depth)
+            lake_level_control_gate.target_setting = 0
 
     summary_model2 = post_process_table(sim)
 
@@ -94,3 +118,34 @@ for key in summary_model1.keys():
     print("| {:25s} | {:15.3f} | {:15.3f} |".format(key,
                                                     summary_model1[key],
                                                     summary_model2[key]))
+
+import swmmio
+from swmmio import find_network_trace
+from swmmio import (build_profile_plot, add_hgl_plot, add_node_labels_plot,
+                    add_link_labels_plot)
+
+# Profile Plotter Demo
+rpt = swmmio.rpt("Hartfordville_1.rpt")
+profile_depths_no_control = rpt.node_depth_summary.MaxNodeDepthReported
+rpt = swmmio.rpt("Hartfordville_ctrl.rpt")
+profile_depths_w_control = rpt.node_depth_summary.MaxNodeDepthReported
+
+mymodel = swmmio.Model(r"Hartfordville_1.inp")
+fig = plt.figure(figsize=(11,9))
+fig.suptitle("Max HGL")
+ax = fig.add_subplot(6,1,(1,3))
+path_selection = find_network_trace(mymodel, 'WATER_SUPPLY_RESERVOIR', 'WESTRIVER_TP')
+# profile_config = build_profile_plot(ax, mymodel, path_selection)
+# add_hgl_plot(ax, profile_config, depth=profile_depths_no_control, label="No Control")
+# add_hgl_plot(ax, profile_config, depth=profile_depths_w_control, color='green',label="With Control")
+# add_node_labels_plot(ax, mymodel, profile_config)
+# add_link_labels_plot(ax, mymodel, profile_config)
+leg = ax.legend()
+ax.grid('xy')
+ax.get_xaxis().set_ticklabels([])
+
+
+ax.grid('xy')
+fig.tight_layout()
+fig.savefig("profiles.png")
+plt.close()
