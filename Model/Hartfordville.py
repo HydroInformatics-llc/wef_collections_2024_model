@@ -70,6 +70,33 @@ with Simulation('./Hartfordville_1.inp') as sim:
     summary_model1 = post_process_table(sim)
 
 
+class ControlCurve():
+    def __init__(self, X, Y):
+        self._x = X
+        self._y = Y
+
+    def __call__(self, input):
+        x = input
+        X = self._x
+        Y = self._y
+        if x <= X[0]:
+            setting = Y[0]
+        elif x >= X[-1]:
+            setting = Y[-1]
+        else:
+            i = 0
+            while i < len(X):
+                if X[i] <= x and x <= X[i+1]:
+                    break
+                i += 1
+            x1, x2 = X[i], X[i+1]
+            delta = x2 - x1
+            proportion = (x - x1) / delta
+            y1, y2 = Y[i], Y[i+1]
+            y_delta = y2 - y1
+            setting = y1 + y_delta * proportion
+        return setting
+
 with Simulation('./Hartfordville_1.inp', \
                 './Hartfordville_ctrl.rpt',
                 './Hartfordville_ctrl.out') as sim:
@@ -96,21 +123,25 @@ with Simulation('./Hartfordville_1.inp', \
     cso_9_overflow_regulator.target_setting = 0
     cso_9_underflow_gate.target_setting = 0.5
 
+    wtrp_control_curve = ControlCurve([0,3,4,5],[0,0,0.5,1])
+
     # Run Simulation
     sim.step_advance(300)
     for step in sim:
-        if wr_wet_well.depth >= 6:
-            # Emergency State
-            bridge_river_cross_pump.target_setting = 1
-        elif C11_1.flow > 12:
-            delta_flow = ( C11_1.flow - 12 ) / 20 #
-            #delta_flow *= 2 # Adjustment Factor
-            if delta_flow > 1: delta_flow = 1
-            #print(delta_flow * 20)
-            bridge_river_cross_pump.target_setting = delta_flow
-            #print(bridge_river_cross_pump.flow, wr_wet_well.depth)
-        else:
-            bridge_river_cross_pump.target_setting = 0
+        # if wr_wet_well.depth >= 6:
+        #     # Emergency State
+        #     bridge_river_cross_pump.target_setting = 1
+        # elif C11_1.flow > 12:
+        #     delta_flow = ( C11_1.flow - 12 ) / 20 #
+        #     #delta_flow *= 2 # Adjustment Factor
+        #     if delta_flow > 1: delta_flow = 1
+        #     #print(delta_flow * 20)
+        #     bridge_river_cross_pump.target_setting = delta_flow
+        #     #print(bridge_river_cross_pump.flow, wr_wet_well.depth)
+        # else:
+        #     bridge_river_cross_pump.target_setting = 0
+        bridge_river_cross_pump.target_setting \
+            = wtrp_control_curve(wr_wet_well.depth)
 
         # Dewater Reservoir before storm event!
         if sim.current_time <= datetime.datetime(2024, 4, 9, 8, 0, 0):
@@ -128,34 +159,35 @@ for key in summary_model1.keys():
     print("| {:25s} | {:15.3f} | {:15.3f} |".format(key,
                                                     summary_model1[key],
                                                     summary_model2[key]))
+f = False
+if f:
+    import swmmio
+    from swmmio import find_network_trace
+    from swmmio import (build_profile_plot, add_hgl_plot, add_node_labels_plot,
+                        add_link_labels_plot)
 
-import swmmio
-from swmmio import find_network_trace
-from swmmio import (build_profile_plot, add_hgl_plot, add_node_labels_plot,
-                    add_link_labels_plot)
+    # Profile Plotter Demo
+    rpt = swmmio.rpt("Hartfordville_1.rpt")
+    profile_depths_no_control = rpt.node_depth_summary.MaxNodeDepthReported
+    rpt = swmmio.rpt("Hartfordville_ctrl.rpt")
+    profile_depths_w_control = rpt.node_depth_summary.MaxNodeDepthReported
 
-# Profile Plotter Demo
-rpt = swmmio.rpt("Hartfordville_1.rpt")
-profile_depths_no_control = rpt.node_depth_summary.MaxNodeDepthReported
-rpt = swmmio.rpt("Hartfordville_ctrl.rpt")
-profile_depths_w_control = rpt.node_depth_summary.MaxNodeDepthReported
-
-mymodel = swmmio.Model(r"Hartfordville_1.inp")
-fig = plt.figure(figsize=(11,6))
-fig.suptitle("Max HGL")
-ax = fig.add_subplot(6,1,(1,6))
-path_selection = find_network_trace(mymodel, 'WATER_SUPPLY_RESERVOIR', 'WESTRIVER_TP')
-profile_config = build_profile_plot(ax, mymodel, path_selection)
-add_hgl_plot(ax, profile_config, depth=profile_depths_no_control, label="No Control")
-add_hgl_plot(ax, profile_config, depth=profile_depths_w_control, color='green',label="With Control")
-add_node_labels_plot(ax, mymodel, profile_config)
-add_link_labels_plot(ax, mymodel, profile_config)
-leg = ax.legend()
-ax.grid('xy')
-ax.get_xaxis().set_ticklabels([])
+    mymodel = swmmio.Model(r"Hartfordville_1.inp")
+    fig = plt.figure(figsize=(11,6))
+    fig.suptitle("Max HGL")
+    ax = fig.add_subplot(6,1,(1,6))
+    path_selection = find_network_trace(mymodel, 'WATER_SUPPLY_RESERVOIR', 'WESTRIVER_TP')
+    profile_config = build_profile_plot(ax, mymodel, path_selection)
+    add_hgl_plot(ax, profile_config, depth=profile_depths_no_control, label="No Control")
+    add_hgl_plot(ax, profile_config, depth=profile_depths_w_control, color='green',label="With Control")
+    add_node_labels_plot(ax, mymodel, profile_config)
+    add_link_labels_plot(ax, mymodel, profile_config)
+    leg = ax.legend()
+    ax.grid('xy')
+    ax.get_xaxis().set_ticklabels([])
 
 
-ax.grid('xy')
-fig.tight_layout()
-fig.savefig("profiles.png")
-plt.close()
+    ax.grid('xy')
+    fig.tight_layout()
+    fig.savefig("profiles.png")
+    plt.close()
