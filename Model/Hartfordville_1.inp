@@ -23,7 +23,7 @@ DRY_DAYS             0
 REPORT_STEP          00:05:00
 WET_STEP             00:05:00
 DRY_STEP             00:05:00
-ROUTING_STEP         0:00:30 
+ROUTING_STEP         0:00:30
 RULE_STEP            00:00:00
 
 INERTIAL_DAMPING     NONE
@@ -46,228 +46,228 @@ CONSTANT         0.0
 DRY_ONLY         NO
 
 [RAINGAGES]
-;;Name           Format    Interval SCF      Source    
+;;Name           Format    Interval SCF      Source
 ;;-------------- --------- ------ ------ ----------
 ;SCS_Type_III_1yr_24hr_Hartford
 Raingage         VOLUME    0:06     1.0      TIMESERIES SCS_Type_III_1yr_24hr_Hartford
 
 [SUBCATCHMENTS]
-;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack
 ;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
-1                Raingage         WATER_SUPPLY_RESERVOIR 50       40       10000    0.5      0                        
+1                Raingage         WATER_SUPPLY_RESERVOIR 50       40       10000    0.5      0
 
 [SUBAREAS]
-;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted
 ;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
-1                0.01       0.1        0.05       0.05       50         OUTLET    
+1                0.01       0.1        0.05       0.05       50         OUTLET
 
 [INFILTRATION]
-;;Subcatchment   Param1     Param2     Param3     Param4     Param5    
+;;Subcatchment   Param1     Param2     Param3     Param4     Param5
 ;;-------------- ---------- ---------- ---------- ---------- ----------
-1                3.0        0.5        4          7          0         
+1                3.0        0.5        4          7          0
 
 [JUNCTIONS]
-;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded
 ;;-------------- ---------- ---------- ---------- ---------- ----------
-J1               1.957      10.043     0          0          0         
-J10              1.712      10.288     0          0          0         
-J11              1.542      10.458     0          0          0         
-J12              1.34       10.66      0          0          0         
-J13              0.447      11.553     0          0          0         
-J14              0.372      11.628     0          0          0         
-J15              0.21       11.79      0          0          0         
-J16              0.122      11.878     0          0          0         
-J17              0.054      11.946     0          0          0         
-J18              1.501      10.928     0          0          0         
-J19              1.441      10.928     0          0          0         
-J2               1.803      10.197     0          0          0         
-J20              1.335      10.928     0          0          0         
-J21              1.239      8          0          0          0         
-J22              1.113      10.928     0          0          0         
-J23              0.939      11.061     0          0          0         
-J24              1.402      10.598     0          0          0         
-J25              0.041      12         0          0          0         
-J26              1.072      10.928     0          0          0         
-J27              0.7        11.3       0          0          0         
-J28              14.623     5          0          0          0         
-J29              8          10.928     0          0          0         
-J3               1.976      10.024     0          0          0         
-J30              10.239     5          0          0          0         
-J31              10.218     3.248      0          0          0         
-J32              7.238      5.025      0          0          0         
-J33              8.7        4.45       0          0          0         
-J34              1.291      10.928     0          0          0         
-J35              5          11.3       0          0          0         
-J36              6.25       11.784     0          0          0         
-J37              4.21       11.974     0          0          0         
-J38              0.026      11.974     0          0          0         
-J39              0.216      11.784     0          0          0         
-INT_CSO3         2.15       9.85       0          0          0         
-J40              2.538      9.462      0          0          0         
-J41              2.336      9.664      0          0          0         
-J42              2.904      9.096      0          0          0         
-INT_CSO4         0.769      11.231     0          0          0         
-J44              0.552      11.448     0          0          0         
-J5               2.27       9.73       0          0          0         
-J6               2.249      9.751      0          0          0         
-J7               2.455      9.545      0          0          0         
-J8               2.52       9.48       0          0          0         
-J9               2.841      9.159      0          0          0         
+J1               1.957      10.043     0          0          0
+J10              1.712      10.288     0          0          0
+J11              1.542      10.458     0          0          0
+J12              1.34       10.66      0          0          0
+J13              0.447      11.553     0          0          0
+J14              0.372      11.628     0          0          0
+J15              0.21       11.79      0          0          0
+J16              0.122      11.878     0          0          0
+J17              0.054      11.946     0          0          0
+J18              1.501      10.928     0          0          0
+J19              1.441      10.928     0          0          0
+J2               1.803      10.197     0          0          0
+J20              1.335      10.928     0          0          0
+J21              1.239      8          0          0          0
+J22              1.113      10.928     0          0          0
+J23              0.939      11.061     0          0          0
+J24              1.402      10.598     0          0          0
+J25              0.041      12         0          0          0
+J26              1.072      10.928     0          0          0
+J27              0.7        11.3       0          0          0
+J28              14.623     5          0          0          0
+J29              8          10.928     0          0          0
+J3               1.976      10.024     0          0          0
+J30              10.239     5          0          0          0
+J31              10.218     3.248      0          0          0
+J32              7.238      5.025      0          0          0
+J33              8.7        4.45       0          0          0
+J34              1.291      10.928     0          0          0
+J35              5          11.3       0          0          0
+J36              6.25       11.784     0          0          0
+J37              4.21       11.974     0          0          0
+J38              0.026      11.974     0          0          0
+J39              0.216      11.784     0          0          0
+INT_CSO3         2.15       9.85       0          0          0
+J40              2.538      9.462      0          0          0
+J41              2.336      9.664      0          0          0
+J42              2.904      9.096      0          0          0
+INT_CSO4         0.769      11.231     0          0          0
+J44              0.552      11.448     0          0          0
+J5               2.27       9.73       0          0          0
+J6               2.249      9.751      0          0          0
+J7               2.455      9.545      0          0          0
+J8               2.52       9.48       0          0          0
+J9               2.841      9.159      0          0          0
 
 [OUTFALLS]
-;;Name           Elevation  Type       Stage Data       Gated    Route To        
+;;Name           Elevation  Type       Stage Data       Gated    Route To
 ;;-------------- ---------- ---------- ---------------- -------- ----------------
-WESTRIVER_TP     0          FREE                        NO                       
-EASTRIVER_TP     0          FREE                        NO                       
-CSO3             0          FREE                        NO                       
-CSO4             0          FREE                        NO                       
-WESTRIVER_GRAVITY_BYPASS 0          FREE                        NO                       
-EASTRIVER_GRAVITY_BYPASS 0          FREE                        NO                       
-CSO9             0          FREE                        NO                       
+WESTRIVER_TP     0          FREE                        NO
+EASTRIVER_TP     0          FREE                        NO
+CSO3             0          FREE                        NO
+CSO4             0          FREE                        NO
+WESTRIVER_GRAVITY_BYPASS 0          FREE                        NO
+EASTRIVER_GRAVITY_BYPASS 0          FREE                        NO
+CSO9             0          FREE                        NO
 
 [STORAGE]
-;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Type/Params            SurDepth  Fevap    Psi      Ksat     IMD     
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Type/Params            SurDepth  Fevap    Psi      Ksat     IMD
 ;;-------------- -------- ---------- ----------- ---------- ---------------------------- --------- --------          -------- --------
-WATER_SUPPLY_RESERVOIR 2.841    5          4          FUNCTIONAL 67527      0          0        4         0       
-WR_WET_WELL      0        10         0          FUNCTIONAL 0          0          6400     0         0       
-ER_WETWELL       0        10         0          FUNCTIONAL 0          0          6400     0         0       
-OLD_WWTP_PRIMARY_TANK -5       15         0          FUNCTIONAL 0          0          6400     30        0       
+WATER_SUPPLY_RESERVOIR 2.841    5          4          FUNCTIONAL 67527      0          0        4         0
+WR_WET_WELL      0        10         0          FUNCTIONAL 0          0          6400     0         0
+ER_WETWELL       0        10         0          FUNCTIONAL 0          0          6400     0         0
+OLD_WWTP_PRIMARY_TANK -5       15         0          FUNCTIONAL 0          0          6400     30        0
 
 [CONDUITS]
-;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow
 ;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
-C1               J9               J8               1597.754   0.01       0          0          0          0         
-C10              J10              J11              848.642    0.01       0          0          0          0         
-C11              WR_WET_WELL      WESTRIVER_GRAVITY_BYPASS 354.547    0.01       7          0          0          0         
-C11_1            J11              J24              697.666    0.01       0          0          0          0         
-C11_2            J24              J12              309.497    0.01       0          0          0          0         
-C12_1            J12              J44              432.979    0.01       0          0          0          0         
-C12_2            J44              J13              528.664    0.01       0          0          0          0         
-C13              J13              J14              374.541    0.01       0          0          0          0         
-C14              J14              J15              809.78     0.01       0          0          0          0         
-C15              J15              J16              437.237    0.01       0          0          0          0         
-C16              J16              J17              341.67     0.01       0          0          0          0         
-C17              J17              WR_WET_WELL      269.864    0.01       0          0          0          0         
-C18              J18              J19              598.997    0.01       0          0          0          0         
-C19              J19              J20              1058.638   0.01       0          0          0          0         
-C2               J8               J7               326.306    0.01       0          0          0          0         
-C20              J29              J34              1193.305   0.01       0          5          0          0         
-C20_1            J20              J34              426.714    0.01       0          0          0          0         
-C20_2            J34              J21              522.853    0.01       0          0          0          0         
-C21              J21              J22              1251.139   0.01       0          0          0          0         
-C22              J25              CSO9             410.195    0.01       0          0          0          0         
-C23_2            J26              J23              1099.152   0.01       0          0          0          0         
-C24              J28              J32              2953.407   0.01       0          0          0          0         
-C24_2            J27              J39              4023.184   0.01       0          0          0          0         
-C24_3            J23              INT_CSO4         1410.567   0.01       0          0          0          0         
-C24_4            J38              ER_WETWELL       211.029    0.01       0          0          0          0         
-C24_5            J39              J38              1575.645   0.01       0          0          0          0         
-C24_6            INT_CSO4         J27              577.201    0.01       0          0          0          0         
-C25              ER_WETWELL       EASTRIVER_GRAVITY_BYPASS 868.154    0.01       8          0          0          0         
-C26              J32              J20              360.884    0.01       0          5          0          0         
-C27              J30              J33              616.83     0.01       0          0          0          0         
-C27_1            J31              J33              1816.864   0.01       0          0          0          0         
-C27_2            J33              J21              580.71     0.01       0          5          0          0         
-C28              J35              J27              1609.584   0.01       0          3.25       0          0         
-C29              J37              J38              556.476    0.01       0          3.28       0          0         
-C3               J42              J41              2842.025   0.01       0          0          0          0         
-C3_1             J7               J41              598.018    0.01       0          0          0          0         
-C3_2             J41              J5               321.026    0.01       0          0          0          0         
-C30              J36              J39              963.741    0.01       0          4          0          0         
-C31              J40              J3               2808.188   0.01       0          0          0          0         
-C4               J5               J6               104.406    0.01       0          0          0          0         
-C5               J6               INT_CSO3         498.432    0.01       0          0          0          0         
-C6               J3               J2               864.523    0.01       0          0          0          0         
-C7               INT_CSO3         J3               865.605    0.01       0          0          0          0         
-C8               J1               J2               770.064    0.01       0          0          0          0         
-C9               J2               J10              453.104    0.01       0          0          0          0         
+C1               J9               J8               1597.754   0.01       0          0          0          0
+C10              J10              J11              848.642    0.01       0          0          0          0
+C11              WR_WET_WELL      WESTRIVER_GRAVITY_BYPASS 354.547    0.01       7          0          0          0
+C11_1            J11              J24              697.666    0.01       0          0          0          0
+C11_2            J24              J12              309.497    0.01       0          0          0          0
+C12_1            J12              J44              432.979    0.01       0          0          0          0
+C12_2            J44              J13              528.664    0.01       0          0          0          0
+C13              J13              J14              374.541    0.01       0          0          0          0
+C14              J14              J15              809.78     0.01       0          0          0          0
+C15              J15              J16              437.237    0.01       0          0          0          0
+C16              J16              J17              341.67     0.01       0          0          0          0
+C17              J17              WR_WET_WELL      269.864    0.01       0          0          0          0
+C18              J18              J19              598.997    0.01       0          0          0          0
+C19              J19              J20              1058.638   0.01       0          0          0          0
+C2               J8               J7               326.306    0.01       0          0          0          0
+C20              J29              J34              1193.305   0.01       0          5          0          0
+C20_1            J20              J34              426.714    0.01       0          0          0          0
+C20_2            J34              J21              522.853    0.01       0          0          0          0
+C21              J21              J22              1251.139   0.01       0          0          0          0
+C22              J25              CSO9             410.195    0.01       0          0          0          0
+C23_2            J26              J23              1099.152   0.01       0          0          0          0
+C24              J28              J32              2953.407   0.01       0          0          0          0
+C24_2            J27              J39              4023.184   0.01       0          0          0          0
+C24_3            J23              INT_CSO4         1410.567   0.01       0          0          0          0
+C24_4            J38              ER_WETWELL       211.029    0.01       0          0          0          0
+C24_5            J39              J38              1575.645   0.01       0          0          0          0
+C24_6            INT_CSO4         J27              577.201    0.01       0          0          0          0
+C25              ER_WETWELL       EASTRIVER_GRAVITY_BYPASS 868.154    0.01       8          0          0          0
+C26              J32              J20              360.884    0.01       0          5          0          0
+C27              J30              J33              616.83     0.01       0          0          0          0
+C27_1            J31              J33              1816.864   0.01       0          0          0          0
+C27_2            J33              J21              580.71     0.01       0          5          0          0
+C28              J35              J27              1609.584   0.01       0          3.25       0          0
+C29              J37              J38              556.476    0.01       0          3.28       0          0
+C3               J42              J41              2842.025   0.01       0          0          0          0
+C3_1             J7               J41              598.018    0.01       0          0          0          0
+C3_2             J41              J5               321.026    0.01       0          0          0          0
+C30              J36              J39              963.741    0.01       0          4          0          0
+C31              J40              J3               2808.188   0.01       0          0          0          0
+C4               J5               J6               104.406    0.01       0          0          0          0
+C5               J6               INT_CSO3         498.432    0.01       0          0          0          0
+C6               J3               J2               864.523    0.02       0          0          0          0
+C7               INT_CSO3         J3               865.605    0.02       0          0          0          0
+C8               J1               J2               770.064    0.02       0          0          0          0
+C9               J2               J10              453.104    0.02       0          0          0          0
 
 [PUMPS]
-;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff
 ;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
-BRIDGE_RIVER_CROSS_PUMP J12              J27              BridgeRiverCross_pumpcurve OFF      0        0       
-WESTRIVER_PUMP   WR_WET_WELL      WESTRIVER_TP     WestRiver_pumpcurve ON       0        0       
-EASTRIVER_PUMP   ER_WETWELL       EASTRIVER_TP     EastRiver_pumpcurve30 ON       0        0       
-OLD_WWTP_PRIMARY_DEWATER_PUMP OLD_WWTP_PRIMARY_TANK J12              Primary_DW_pumpcurve ON       0        0       
+BRIDGE_RIVER_CROSS_PUMP J12              J27              BridgeRiverCross_pumpcurve OFF      0        0
+WESTRIVER_PUMP   WR_WET_WELL      WESTRIVER_TP     WestRiver_pumpcurve ON       0        0
+EASTRIVER_PUMP   ER_WETWELL       EASTRIVER_TP     EastRiver_pumpcurve30 ON       0        0
+OLD_WWTP_PRIMARY_DEWATER_PUMP OLD_WWTP_PRIMARY_TANK J12              Primary_DW_pumpcurve ON       0        0
 
 [ORIFICES]
-;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
+;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime
 ;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- ----------
-C23_1            J22              J26              SIDE         0          0.65       YES      0         
-LAKE_LEVEL_CONTROL_GATE WATER_SUPPLY_RESERVOIR J9               SIDE         0          0.65       NO       0         
-OLD_WWTP_PRIMARY_DIVERSION_GATE J24              OLD_WWTP_PRIMARY_TANK SIDE         0          0.65       NO       0         
+C23_1            J22              J26              SIDE         0          0.65       YES      0
+LAKE_LEVEL_CONTROL_GATE WATER_SUPPLY_RESERVOIR J9               SIDE         0          0.65       NO       0
+OLD_WWTP_PRIMARY_DIVERSION_GATE J24              OLD_WWTP_PRIMARY_TANK SIDE         0          0.65       NO       0
 
 [WEIRS]
 ;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf   Coeff. Curve
 ;;-------------- ---------------- ---------------- ------------ ---------- ---------- -------- -------- ---------- ---------- ---------- ---------- ----------------
-CSO9_REG         J22              J25              TRANSVERSE   2          3.33       NO       0        0          YES       
-CSO3_REG         INT_CSO3         CSO3             TRAPEZOIDAL  5.35       3.33       NO       0        0          YES       
-CSO4_REG         INT_CSO4         CSO4             TRAPEZOIDAL  3          3.33       NO       0        0          YES       
-EMERGENCY_SPILLWAY WATER_SUPPLY_RESERVOIR J9               TRANSVERSE   5          3.33       NO       0        0          YES       
+CSO9_REG         J22              J25              TRANSVERSE   2          3.33       NO       0        0          YES
+CSO3_REG         INT_CSO3         CSO3             TRAPEZOIDAL  5.298       3.33       NO       0        0          YES
+CSO4_REG         INT_CSO4         CSO4             TRAPEZOIDAL  3          3.33       NO       0        0          YES
+EMERGENCY_SPILLWAY WATER_SUPPLY_RESERVOIR J9               TRANSVERSE   5          3.33       NO       0        0          YES
 
 [XSECTIONS]
-;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert
 ;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
-C1               CIRCULAR     3                0          0          0          1                    
-C10              CIRCULAR     5                0          0          0          1                    
-C11              RECT_OPEN    2                7          0          0          1                    
-C11_1            CIRCULAR     5                0          0          0          1                    
-C11_2            CIRCULAR     5                0          0          0          1                    
-C12_1            CIRCULAR     5                0          0          0          1                    
-C12_2            CIRCULAR     5                0          0          0          1                    
-C13              CIRCULAR     5                0          0          0          1                    
-C14              CIRCULAR     5                0          0          0          1                    
-C15              CIRCULAR     5                0          0          0          1                    
-C16              CIRCULAR     5                0          0          0          1                    
-C17              CIRCULAR     5                0          0          0          1                    
-C18              CIRCULAR     8                0          0          0          1                    
-C19              CIRCULAR     8                0          0          0          1                    
-C2               CIRCULAR     3                0          0          0          1                    
-C20              CIRCULAR     1                0          0          0          1                    
-C20_1            CIRCULAR     8                0          0          0          1                    
-C20_2            CIRCULAR     8                0          0          0          1                    
-C21              CIRCULAR     8                0          0          0          1                    
-C22              CIRCULAR     3                0          0          0          1                    
-C23_2            CIRCULAR     3                0          0          0          1                    
-C24              CIRCULAR     1                0          0          0          1                    
-C24_2            CIRCULAR     3                0          0          0          1                    
-C24_3            CIRCULAR     3                0          0          0          1                    
-C24_4            CIRCULAR     3                0          0          0          1                    
-C24_5            CIRCULAR     3                0          0          0          1                    
-C24_6            CIRCULAR     3                0          0          0          1                    
-C25              RECT_OPEN    1                4          0          0          1                    
-C26              CIRCULAR     1                0          0          0          1                    
-C27              CIRCULAR     1                0          0          0          1                    
-C27_1            CIRCULAR     1                0          0          0          1                    
-C27_2            CIRCULAR     1                0          0          0          1                    
-C28              CIRCULAR     1                0          0          0          1                    
-C29              CIRCULAR     1                0          0          0          1                    
-C3               CIRCULAR     1                0          0          0          1                    
-C3_1             CIRCULAR     4                0          0          0          1                    
-C3_2             CIRCULAR     4                0          0          0          1                    
-C30              CIRCULAR     1                0          0          0          1                    
-C31              CIRCULAR     1.5              0          0          0          1                    
-C4               CIRCULAR     4                0          0          0          1                    
-C5               CIRCULAR     4                0          0          0          1                    
-C6               CIRCULAR     4                0          0          0          1                    
-C7               CIRCULAR     4                0          0          0          1                    
-C8               CIRCULAR     1                0          0          0          1                    
-C9               CIRCULAR     4                0          0          0          1                    
+C1               CIRCULAR     3                0          0          0          1
+C10              CIRCULAR     5                0          0          0          1
+C11              RECT_OPEN    2                7          0          0          1
+C11_1            CIRCULAR     5                0          0          0          1
+C11_2            CIRCULAR     5                0          0          0          1
+C12_1            CIRCULAR     5                0          0          0          1
+C12_2            CIRCULAR     5                0          0          0          1
+C13              CIRCULAR     5                0          0          0          1
+C14              CIRCULAR     5                0          0          0          1
+C15              CIRCULAR     5                0          0          0          1
+C16              CIRCULAR     5                0          0          0          1
+C17              CIRCULAR     5                0          0          0          1
+C18              CIRCULAR     8                0          0          0          1
+C19              CIRCULAR     8                0          0          0          1
+C2               CIRCULAR     3                0          0          0          1
+C20              CIRCULAR     1                0          0          0          1
+C20_1            CIRCULAR     8                0          0          0          1
+C20_2            CIRCULAR     8                0          0          0          1
+C21              CIRCULAR     8                0          0          0          1
+C22              CIRCULAR     3                0          0          0          1
+C23_2            CIRCULAR     3                0          0          0          1
+C24              CIRCULAR     1                0          0          0          1
+C24_2            CIRCULAR     3                0          0          0          1
+C24_3            CIRCULAR     3                0          0          0          1
+C24_4            CIRCULAR     3                0          0          0          1
+C24_5            CIRCULAR     3                0          0          0          1
+C24_6            CIRCULAR     3                0          0          0          1
+C25              RECT_OPEN    1                4          0          0          1
+C26              CIRCULAR     1                0          0          0          1
+C27              CIRCULAR     1                0          0          0          1
+C27_1            CIRCULAR     1                0          0          0          1
+C27_2            CIRCULAR     1                0          0          0          1
+C28              CIRCULAR     1                0          0          0          1
+C29              CIRCULAR     1                0          0          0          1
+C3               CIRCULAR     1                0          0          0          1
+C3_1             CIRCULAR     4                0          0          0          1
+C3_2             CIRCULAR     4                0          0          0          1
+C30              CIRCULAR     1                0          0          0          1
+C31              CIRCULAR     1.5              0          0          0          1
+C4               CIRCULAR     4                0          0          0          1
+C5               CIRCULAR     4                0          0          0          1
+C6               CIRCULAR     4                0          0          0          1
+C7               CIRCULAR     4                0          0          0          1
+C8               CIRCULAR     1                0          0          0          1
+C9               CIRCULAR     4                0          0          0          1
 C23_1            CIRCULAR     1                0          0          0
 LAKE_LEVEL_CONTROL_GATE CIRCULAR     5                0          0          0
 OLD_WWTP_PRIMARY_DIVERSION_GATE CIRCULAR     1                0          0          0
-CSO9_REG         RECT_OPEN    6                3          0          0         
-CSO3_REG         TRAPEZOIDAL  4                4          0          0         
-CSO4_REG         TRAPEZOIDAL  6                3          0          0         
-EMERGENCY_SPILLWAY RECT_OPEN    1                15         0          0         
+CSO9_REG         RECT_OPEN    6                3          0          0
+CSO3_REG         TRAPEZOIDAL  4                4          0          0
+CSO4_REG         TRAPEZOIDAL  6                3          0          0
+EMERGENCY_SPILLWAY RECT_OPEN    1                15         0          0
 
 [INFLOWS]
 ;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
 ;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
-WATER_SUPPLY_RESERVOIR FLOW             ""               FLOW     1.0      1.0      1       
+WATER_SUPPLY_RESERVOIR FLOW             ""               FLOW     1.0      1.0      1
 
 [DWF]
-;;Node           Constituent      Baseline   Patterns  
+;;Node           Constituent      Baseline   Patterns
 ;;-------------- ---------------- ---------- ----------
 J1               FLOW             0.849      "DWF1-Hourly" "DWF1-Weekend"
 J10              FLOW             0.54625    "DWF1-Hourly" "DWF1-Weekend"
@@ -314,326 +314,326 @@ J8               FLOW             0.176      "DWF1-Hourly" "DWF1-Weekend"
 J9               FLOW             0.31775    "DWF1-Hourly" "DWF1-Weekend"
 
 [HYDROGRAPHS]
-;;Hydrograph     Rain Gage/Month  Response R        T        K        Dmax     Drecov   Dinit   
+;;Hydrograph     Rain Gage/Month  Response R        T        K        Dmax     Drecov   Dinit
 ;;-------------- ---------------- -------- -------- -------- -------- -------- -------- --------
-Hydrograph1      RainGage        
-Hydrograph1      All              Short    0.255    1.1666665 4.25     0        0        0       
-Hydrograph1      All              Medium   0.12625  4.875    3.75     0        0        0       
-Hydrograph1      All              Long     0.03825  12.5     6.75     0        0        0       
-Hydrograph2      RainGage        
-Hydrograph2      All              Short    0.25     1        1        0        0        0       
-Hydrograph2      All              Medium   0.0515   2.75     4        0        0        0       
-Hydrograph2      All              Long     0.0075   8.55     7.78     0        0        0       
+Hydrograph1      RainGage
+Hydrograph1      All              Short    0.255    1.1666665 4.25     0        0        0
+Hydrograph1      All              Medium   0.12625  4.875    3.75     0        0        0
+Hydrograph1      All              Long     0.03825  12.5     6.75     0        0        0
+Hydrograph2      RainGage
+Hydrograph2      All              Short    0.25     1        1        0        0        0
+Hydrograph2      All              Medium   0.0515   2.75     4        0        0        0
+Hydrograph2      All              Long     0.0075   8.55     7.78     0        0        0
 
 
 [RDII]
 ;;Node           Unit Hydrograph  Sewer Area
 ;;-------------- ---------------- ----------
-J1               Hydrograph2      4.5       
-J10              Hydrograph2      4.5       
-J11              Hydrograph2      4.5       
-J12              Hydrograph2      4.5       
-J13              Hydrograph2      4.5       
-J14              Hydrograph2      4.5       
-J15              Hydrograph2      4.5       
-J16              Hydrograph2      4.5       
-J17              Hydrograph2      4.5       
-J18              Hydrograph1      4.5       
-J19              Hydrograph1      4.5       
-J2               Hydrograph2      4.5       
-J20              Hydrograph1      4.5       
-J21              Hydrograph1      4.5       
-J22              Hydrograph1      4.5       
-J23              Hydrograph2      4.5       
-J24              Hydrograph2      4.5       
-J26              Hydrograph1      4.5       
-J27              Hydrograph2      4.5       
-J28              Hydrograph1      4.5       
-J29              Hydrograph1      4.5       
-J3               Hydrograph1      4.5       
-J30              Hydrograph1      4.5       
-J31              Hydrograph1      4.5       
-J32              Hydrograph1      4.5       
-J33              Hydrograph1      4.5       
-J34              Hydrograph1      4.5       
-J35              Hydrograph2      4.5       
-J36              Hydrograph2      4.5       
-J37              Hydrograph1      4.5       
-J38              Hydrograph2      4.5       
-J39              Hydrograph2      4.5       
-INT_CSO3         Hydrograph1      4.5       
-J40              Hydrograph1      4.5       
-J41              Hydrograph1      4.5       
-J42              Hydrograph1      4.5       
-INT_CSO4         Hydrograph2      4.5       
-J44              Hydrograph2      4.5       
-J5               Hydrograph1      4.5       
-J6               Hydrograph1      4.5       
-J7               Hydrograph1      4.5       
-J8               Hydrograph1      4.5       
-J9               Hydrograph1      4.5       
+J1               Hydrograph2      4.5
+J10              Hydrograph2      4.5
+J11              Hydrograph2      4.5
+J12              Hydrograph2      4.5
+J13              Hydrograph2      4.5
+J14              Hydrograph2      4.5
+J15              Hydrograph2      4.5
+J16              Hydrograph2      4.5
+J17              Hydrograph2      4.5
+J18              Hydrograph1      4.5
+J19              Hydrograph1      4.5
+J2               Hydrograph2      4.5
+J20              Hydrograph1      4.5
+J21              Hydrograph1      4.5
+J22              Hydrograph1      4.5
+J23              Hydrograph2      4.5
+J24              Hydrograph2      4.5
+J26              Hydrograph1      4.5
+J27              Hydrograph2      4.5
+J28              Hydrograph1      4.5
+J29              Hydrograph1      4.5
+J3               Hydrograph1      4.5
+J30              Hydrograph1      4.5
+J31              Hydrograph1      4.5
+J32              Hydrograph1      4.5
+J33              Hydrograph1      4.5
+J34              Hydrograph1      4.5
+J35              Hydrograph2      4.5
+J36              Hydrograph2      4.5
+J37              Hydrograph1      4.5
+J38              Hydrograph2      4.5
+J39              Hydrograph2      4.5
+INT_CSO3         Hydrograph1      4.5
+J40              Hydrograph1      4.5
+J41              Hydrograph1      4.5
+J42              Hydrograph1      4.5
+INT_CSO4         Hydrograph2      4.5
+J44              Hydrograph2      4.5
+J5               Hydrograph1      4.5
+J6               Hydrograph1      4.5
+J7               Hydrograph1      4.5
+J8               Hydrograph1      4.5
+J9               Hydrograph1      4.5
 
 [CURVES]
-;;Name           Type       X-Value    Y-Value   
+;;Name           Type       X-Value    Y-Value
 ;;-------------- ---------- ---------- ----------
-WestRiver_pumpcurve Pump4      0          0         
-WestRiver_pumpcurve            3          15        
-WestRiver_pumpcurve            100        15        
+WestRiver_pumpcurve Pump4      0          0
+WestRiver_pumpcurve            2          15
+WestRiver_pumpcurve            100        15
 ;
-EastRiver_pumpcurve30 Pump4      0          0         
-EastRiver_pumpcurve30            3          30        
-EastRiver_pumpcurve30            100        30        
+EastRiver_pumpcurve30 Pump4      0          0
+EastRiver_pumpcurve30            3          30
+EastRiver_pumpcurve30            100        30
 ;
-Primary_DW_pumpcurve Pump4      0          20        
-Primary_DW_pumpcurve            100        20        
+Primary_DW_pumpcurve Pump4      0          20
+Primary_DW_pumpcurve            100        20
 ;
-BridgeRiverCross_pumpcurve Pump4      0          20        
-BridgeRiverCross_pumpcurve            100        20        
+BridgeRiverCross_pumpcurve Pump4      0          20
+BridgeRiverCross_pumpcurve            100        20
 
 [TIMESERIES]
-;;Name           Date       Time       Value     
+;;Name           Date       Time       Value
 ;;-------------- ---------- ---------- ----------
 ;SCS_Type_III_1in design storm, total rainfall = 1 in, rain interval = 6 minutes, rain units = in.
-SCS_Type_III_1yr_24hr_Hartford            0:00       0.001     
-SCS_Type_III_1yr_24hr_Hartford            0:06       0.001     
-SCS_Type_III_1yr_24hr_Hartford            0:12       0.001     
-SCS_Type_III_1yr_24hr_Hartford            0:18       0.001     
-SCS_Type_III_1yr_24hr_Hartford            0:24       0.001     
-SCS_Type_III_1yr_24hr_Hartford            0:30       0.001     
-SCS_Type_III_1yr_24hr_Hartford            0:36       0.001     
-SCS_Type_III_1yr_24hr_Hartford            0:42       0.001     
-SCS_Type_III_1yr_24hr_Hartford            0:48       0.001     
-SCS_Type_III_1yr_24hr_Hartford            0:54       0.001     
-SCS_Type_III_1yr_24hr_Hartford            1:00       0.001     
-SCS_Type_III_1yr_24hr_Hartford            1:06       0.001     
-SCS_Type_III_1yr_24hr_Hartford            1:12       0.001     
-SCS_Type_III_1yr_24hr_Hartford            1:18       0.001     
-SCS_Type_III_1yr_24hr_Hartford            1:24       0.001     
-SCS_Type_III_1yr_24hr_Hartford            1:30       0.001     
-SCS_Type_III_1yr_24hr_Hartford            1:36       0.001     
-SCS_Type_III_1yr_24hr_Hartford            1:42       0.001     
-SCS_Type_III_1yr_24hr_Hartford            1:48       0.001     
-SCS_Type_III_1yr_24hr_Hartford            1:54       0.001     
-SCS_Type_III_1yr_24hr_Hartford            2:00       0.00101   
-SCS_Type_III_1yr_24hr_Hartford            2:06       0.00102   
-SCS_Type_III_1yr_24hr_Hartford            2:12       0.00104   
-SCS_Type_III_1yr_24hr_Hartford            2:18       0.00105   
-SCS_Type_III_1yr_24hr_Hartford            2:24       0.00107   
-SCS_Type_III_1yr_24hr_Hartford            2:30       0.00108   
-SCS_Type_III_1yr_24hr_Hartford            2:36       0.0011    
-SCS_Type_III_1yr_24hr_Hartford            2:42       0.00111   
-SCS_Type_III_1yr_24hr_Hartford            2:48       0.00113   
-SCS_Type_III_1yr_24hr_Hartford            2:54       0.00114   
-SCS_Type_III_1yr_24hr_Hartford            3:00       0.00116   
-SCS_Type_III_1yr_24hr_Hartford            3:06       0.00117   
-SCS_Type_III_1yr_24hr_Hartford            3:12       0.00119   
-SCS_Type_III_1yr_24hr_Hartford            3:18       0.0012    
-SCS_Type_III_1yr_24hr_Hartford            3:24       0.00122   
-SCS_Type_III_1yr_24hr_Hartford            3:30       0.00123   
-SCS_Type_III_1yr_24hr_Hartford            3:36       0.00125   
-SCS_Type_III_1yr_24hr_Hartford            3:42       0.00126   
-SCS_Type_III_1yr_24hr_Hartford            3:48       0.00128   
-SCS_Type_III_1yr_24hr_Hartford            3:54       0.00129   
-SCS_Type_III_1yr_24hr_Hartford            4:00       0.00131   
-SCS_Type_III_1yr_24hr_Hartford            4:06       0.00132   
-SCS_Type_III_1yr_24hr_Hartford            4:12       0.00134   
-SCS_Type_III_1yr_24hr_Hartford            4:18       0.00135   
-SCS_Type_III_1yr_24hr_Hartford            4:24       0.00137   
-SCS_Type_III_1yr_24hr_Hartford            4:30       0.00138   
-SCS_Type_III_1yr_24hr_Hartford            4:36       0.0014    
-SCS_Type_III_1yr_24hr_Hartford            4:42       0.00141   
-SCS_Type_III_1yr_24hr_Hartford            4:48       0.00143   
-SCS_Type_III_1yr_24hr_Hartford            4:54       0.00144   
-SCS_Type_III_1yr_24hr_Hartford            5:00       0.00146   
-SCS_Type_III_1yr_24hr_Hartford            5:06       0.00147   
-SCS_Type_III_1yr_24hr_Hartford            5:12       0.00149   
-SCS_Type_III_1yr_24hr_Hartford            5:18       0.0015    
-SCS_Type_III_1yr_24hr_Hartford            5:24       0.00152   
-SCS_Type_III_1yr_24hr_Hartford            5:30       0.00153   
-SCS_Type_III_1yr_24hr_Hartford            5:36       0.00155   
-SCS_Type_III_1yr_24hr_Hartford            5:42       0.00156   
-SCS_Type_III_1yr_24hr_Hartford            5:48       0.00158   
-SCS_Type_III_1yr_24hr_Hartford            5:54       0.00159   
-SCS_Type_III_1yr_24hr_Hartford            6:00       0.00163   
-SCS_Type_III_1yr_24hr_Hartford            6:06       0.00167   
-SCS_Type_III_1yr_24hr_Hartford            6:12       0.00173   
-SCS_Type_III_1yr_24hr_Hartford            6:18       0.00177   
-SCS_Type_III_1yr_24hr_Hartford            6:24       0.00183   
-SCS_Type_III_1yr_24hr_Hartford            6:30       0.00187   
-SCS_Type_III_1yr_24hr_Hartford            6:36       0.00193   
-SCS_Type_III_1yr_24hr_Hartford            6:42       0.00197   
-SCS_Type_III_1yr_24hr_Hartford            6:48       0.00203   
-SCS_Type_III_1yr_24hr_Hartford            6:54       0.00207   
-SCS_Type_III_1yr_24hr_Hartford            7:00       0.00213   
-SCS_Type_III_1yr_24hr_Hartford            7:06       0.00217   
-SCS_Type_III_1yr_24hr_Hartford            7:12       0.00223   
-SCS_Type_III_1yr_24hr_Hartford            7:18       0.00227   
-SCS_Type_III_1yr_24hr_Hartford            7:24       0.00233   
-SCS_Type_III_1yr_24hr_Hartford            7:30       0.00237   
-SCS_Type_III_1yr_24hr_Hartford            7:36       0.00243   
-SCS_Type_III_1yr_24hr_Hartford            7:42       0.00247   
-SCS_Type_III_1yr_24hr_Hartford            7:48       0.00253   
-SCS_Type_III_1yr_24hr_Hartford            7:54       0.00257   
-SCS_Type_III_1yr_24hr_Hartford            8:00       0.00266   
-SCS_Type_III_1yr_24hr_Hartford            8:06       0.00277   
-SCS_Type_III_1yr_24hr_Hartford            8:12       0.00289   
-SCS_Type_III_1yr_24hr_Hartford            8:18       0.003     
-SCS_Type_III_1yr_24hr_Hartford            8:24       0.00312   
-SCS_Type_III_1yr_24hr_Hartford            8:30       0.00323   
-SCS_Type_III_1yr_24hr_Hartford            8:36       0.00335   
-SCS_Type_III_1yr_24hr_Hartford            8:42       0.00346   
-SCS_Type_III_1yr_24hr_Hartford            8:48       0.00358   
-SCS_Type_III_1yr_24hr_Hartford            8:54       0.00369   
-SCS_Type_III_1yr_24hr_Hartford            9:00       0.00381   
-SCS_Type_III_1yr_24hr_Hartford            9:06       0.00392   
-SCS_Type_III_1yr_24hr_Hartford            9:12       0.00404   
-SCS_Type_III_1yr_24hr_Hartford            9:18       0.00415   
-SCS_Type_III_1yr_24hr_Hartford            9:24       0.00427   
-SCS_Type_III_1yr_24hr_Hartford            9:30       0.00438   
-SCS_Type_III_1yr_24hr_Hartford            9:36       0.0045    
-SCS_Type_III_1yr_24hr_Hartford            9:42       0.00461   
-SCS_Type_III_1yr_24hr_Hartford            9:48       0.00473   
-SCS_Type_III_1yr_24hr_Hartford            9:54       0.00484   
-SCS_Type_III_1yr_24hr_Hartford            10:00      0.00502   
-SCS_Type_III_1yr_24hr_Hartford            10:06      0.00526   
-SCS_Type_III_1yr_24hr_Hartford            10:12      0.0055    
-SCS_Type_III_1yr_24hr_Hartford            10:18      0.00574   
-SCS_Type_III_1yr_24hr_Hartford            10:24      0.00598   
-SCS_Type_III_1yr_24hr_Hartford            10:30      0.00622   
-SCS_Type_III_1yr_24hr_Hartford            10:36      0.00646   
-SCS_Type_III_1yr_24hr_Hartford            10:42      0.0067    
-SCS_Type_III_1yr_24hr_Hartford            10:48      0.00694   
-SCS_Type_III_1yr_24hr_Hartford            10:54      0.00718   
-SCS_Type_III_1yr_24hr_Hartford            11:00      0.00776   
-SCS_Type_III_1yr_24hr_Hartford            11:06      0.00868   
-SCS_Type_III_1yr_24hr_Hartford            11:12      0.0096    
-SCS_Type_III_1yr_24hr_Hartford            11:18      0.01052   
-SCS_Type_III_1yr_24hr_Hartford            11:24      0.01144   
-SCS_Type_III_1yr_24hr_Hartford            11:30      0.0163    
-SCS_Type_III_1yr_24hr_Hartford            11:36      0.0251    
-SCS_Type_III_1yr_24hr_Hartford            11:42      0.0339    
-SCS_Type_III_1yr_24hr_Hartford            11:48      0.0427    
-SCS_Type_III_1yr_24hr_Hartford            11:54      0.084     
-SCS_Type_III_1yr_24hr_Hartford            12:00      0.084     
-SCS_Type_III_1yr_24hr_Hartford            12:06      0.0427    
-SCS_Type_III_1yr_24hr_Hartford            12:12      0.0339    
-SCS_Type_III_1yr_24hr_Hartford            12:18      0.0251    
-SCS_Type_III_1yr_24hr_Hartford            12:24      0.0163    
-SCS_Type_III_1yr_24hr_Hartford            12:30      0.01144   
-SCS_Type_III_1yr_24hr_Hartford            12:36      0.01052   
-SCS_Type_III_1yr_24hr_Hartford            12:42      0.0096    
-SCS_Type_III_1yr_24hr_Hartford            12:48      0.00868   
-SCS_Type_III_1yr_24hr_Hartford            12:54      0.00776   
-SCS_Type_III_1yr_24hr_Hartford            13:00      0.00718   
-SCS_Type_III_1yr_24hr_Hartford            13:06      0.00694   
-SCS_Type_III_1yr_24hr_Hartford            13:12      0.0067    
-SCS_Type_III_1yr_24hr_Hartford            13:18      0.00646   
-SCS_Type_III_1yr_24hr_Hartford            13:24      0.00622   
-SCS_Type_III_1yr_24hr_Hartford            13:30      0.00598   
-SCS_Type_III_1yr_24hr_Hartford            13:36      0.00574   
-SCS_Type_III_1yr_24hr_Hartford            13:42      0.0055    
-SCS_Type_III_1yr_24hr_Hartford            13:48      0.00526   
-SCS_Type_III_1yr_24hr_Hartford            13:54      0.00502   
-SCS_Type_III_1yr_24hr_Hartford            14:00      0.00484   
-SCS_Type_III_1yr_24hr_Hartford            14:06      0.00473   
-SCS_Type_III_1yr_24hr_Hartford            14:12      0.00461   
-SCS_Type_III_1yr_24hr_Hartford            14:18      0.0045    
-SCS_Type_III_1yr_24hr_Hartford            14:24      0.00438   
-SCS_Type_III_1yr_24hr_Hartford            14:30      0.00427   
-SCS_Type_III_1yr_24hr_Hartford            14:36      0.00415   
-SCS_Type_III_1yr_24hr_Hartford            14:42      0.00404   
-SCS_Type_III_1yr_24hr_Hartford            14:48      0.00392   
-SCS_Type_III_1yr_24hr_Hartford            14:54      0.00381   
-SCS_Type_III_1yr_24hr_Hartford            15:00      0.00369   
-SCS_Type_III_1yr_24hr_Hartford            15:06      0.00358   
-SCS_Type_III_1yr_24hr_Hartford            15:12      0.00346   
-SCS_Type_III_1yr_24hr_Hartford            15:18      0.00335   
-SCS_Type_III_1yr_24hr_Hartford            15:24      0.00323   
-SCS_Type_III_1yr_24hr_Hartford            15:30      0.00312   
-SCS_Type_III_1yr_24hr_Hartford            15:36      0.003     
-SCS_Type_III_1yr_24hr_Hartford            15:42      0.00289   
-SCS_Type_III_1yr_24hr_Hartford            15:48      0.00277   
-SCS_Type_III_1yr_24hr_Hartford            15:54      0.00266   
-SCS_Type_III_1yr_24hr_Hartford            16:00      0.00258   
-SCS_Type_III_1yr_24hr_Hartford            16:06      0.00252   
-SCS_Type_III_1yr_24hr_Hartford            16:12      0.00248   
-SCS_Type_III_1yr_24hr_Hartford            16:18      0.00242   
-SCS_Type_III_1yr_24hr_Hartford            16:24      0.00238   
-SCS_Type_III_1yr_24hr_Hartford            16:30      0.00232   
-SCS_Type_III_1yr_24hr_Hartford            16:36      0.00228   
-SCS_Type_III_1yr_24hr_Hartford            16:42      0.00222   
-SCS_Type_III_1yr_24hr_Hartford            16:48      0.00218   
-SCS_Type_III_1yr_24hr_Hartford            16:54      0.00212   
-SCS_Type_III_1yr_24hr_Hartford            17:00      0.00208   
-SCS_Type_III_1yr_24hr_Hartford            17:06      0.00202   
-SCS_Type_III_1yr_24hr_Hartford            17:12      0.00198   
-SCS_Type_III_1yr_24hr_Hartford            17:18      0.00192   
-SCS_Type_III_1yr_24hr_Hartford            17:24      0.00188   
-SCS_Type_III_1yr_24hr_Hartford            17:30      0.00182   
-SCS_Type_III_1yr_24hr_Hartford            17:36      0.00178   
-SCS_Type_III_1yr_24hr_Hartford            17:42      0.00172   
-SCS_Type_III_1yr_24hr_Hartford            17:48      0.00168   
-SCS_Type_III_1yr_24hr_Hartford            17:54      0.00162   
-SCS_Type_III_1yr_24hr_Hartford            18:00      0.00159   
-SCS_Type_III_1yr_24hr_Hartford            18:06      0.00158   
-SCS_Type_III_1yr_24hr_Hartford            18:12      0.00156   
-SCS_Type_III_1yr_24hr_Hartford            18:18      0.00155   
-SCS_Type_III_1yr_24hr_Hartford            18:24      0.00153   
-SCS_Type_III_1yr_24hr_Hartford            18:30      0.00152   
-SCS_Type_III_1yr_24hr_Hartford            18:36      0.0015    
-SCS_Type_III_1yr_24hr_Hartford            18:42      0.00149   
-SCS_Type_III_1yr_24hr_Hartford            18:48      0.00147   
-SCS_Type_III_1yr_24hr_Hartford            18:54      0.00146   
-SCS_Type_III_1yr_24hr_Hartford            19:00      0.00144   
-SCS_Type_III_1yr_24hr_Hartford            19:06      0.00143   
-SCS_Type_III_1yr_24hr_Hartford            19:12      0.00141   
-SCS_Type_III_1yr_24hr_Hartford            19:18      0.0014    
-SCS_Type_III_1yr_24hr_Hartford            19:24      0.00138   
-SCS_Type_III_1yr_24hr_Hartford            19:30      0.00137   
-SCS_Type_III_1yr_24hr_Hartford            19:36      0.00135   
-SCS_Type_III_1yr_24hr_Hartford            19:42      0.00134   
-SCS_Type_III_1yr_24hr_Hartford            19:48      0.00132   
-SCS_Type_III_1yr_24hr_Hartford            19:54      0.00131   
-SCS_Type_III_1yr_24hr_Hartford            20:00      0.00129   
-SCS_Type_III_1yr_24hr_Hartford            20:06      0.00129   
-SCS_Type_III_1yr_24hr_Hartford            20:12      0.00127   
-SCS_Type_III_1yr_24hr_Hartford            20:18      0.00126   
-SCS_Type_III_1yr_24hr_Hartford            20:24      0.00125   
-SCS_Type_III_1yr_24hr_Hartford            20:30      0.00124   
-SCS_Type_III_1yr_24hr_Hartford            20:36      0.00122   
-SCS_Type_III_1yr_24hr_Hartford            20:42      0.00122   
-SCS_Type_III_1yr_24hr_Hartford            20:48      0.0012    
-SCS_Type_III_1yr_24hr_Hartford            20:54      0.0012    
-SCS_Type_III_1yr_24hr_Hartford            21:00      0.00118   
-SCS_Type_III_1yr_24hr_Hartford            21:06      0.00117   
-SCS_Type_III_1yr_24hr_Hartford            21:12      0.00116   
-SCS_Type_III_1yr_24hr_Hartford            21:18      0.00115   
-SCS_Type_III_1yr_24hr_Hartford            21:24      0.00113   
-SCS_Type_III_1yr_24hr_Hartford            21:30      0.00113   
-SCS_Type_III_1yr_24hr_Hartford            21:36      0.00111   
-SCS_Type_III_1yr_24hr_Hartford            21:42      0.00111   
-SCS_Type_III_1yr_24hr_Hartford            21:48      0.00109   
-SCS_Type_III_1yr_24hr_Hartford            21:54      0.00108   
-SCS_Type_III_1yr_24hr_Hartford            22:00      0.00107   
-SCS_Type_III_1yr_24hr_Hartford            22:06      0.00106   
-SCS_Type_III_1yr_24hr_Hartford            22:12      0.00104   
-SCS_Type_III_1yr_24hr_Hartford            22:18      0.00104   
-SCS_Type_III_1yr_24hr_Hartford            22:24      0.00102   
-SCS_Type_III_1yr_24hr_Hartford            22:30      0.00102   
-SCS_Type_III_1yr_24hr_Hartford            22:36      0.001     
-SCS_Type_III_1yr_24hr_Hartford            22:42      0.00099   
-SCS_Type_III_1yr_24hr_Hartford            22:48      0.00098   
-SCS_Type_III_1yr_24hr_Hartford            22:54      0.00097   
-SCS_Type_III_1yr_24hr_Hartford            23:00      0.00095   
-SCS_Type_III_1yr_24hr_Hartford            23:06      0.00095   
-SCS_Type_III_1yr_24hr_Hartford            23:12      0.00093   
-SCS_Type_III_1yr_24hr_Hartford            23:18      0.00093   
-SCS_Type_III_1yr_24hr_Hartford            23:24      0.00091   
-SCS_Type_III_1yr_24hr_Hartford            23:30      0.0009    
-SCS_Type_III_1yr_24hr_Hartford            23:36      0.00089   
-SCS_Type_III_1yr_24hr_Hartford            23:42      0.00088   
-SCS_Type_III_1yr_24hr_Hartford            23:48      0.00086   
-SCS_Type_III_1yr_24hr_Hartford            23:54      0.00086   
+SCS_Type_III_1yr_24hr_Hartford            0:00       0.001
+SCS_Type_III_1yr_24hr_Hartford            0:06       0.001
+SCS_Type_III_1yr_24hr_Hartford            0:12       0.001
+SCS_Type_III_1yr_24hr_Hartford            0:18       0.001
+SCS_Type_III_1yr_24hr_Hartford            0:24       0.001
+SCS_Type_III_1yr_24hr_Hartford            0:30       0.001
+SCS_Type_III_1yr_24hr_Hartford            0:36       0.001
+SCS_Type_III_1yr_24hr_Hartford            0:42       0.001
+SCS_Type_III_1yr_24hr_Hartford            0:48       0.001
+SCS_Type_III_1yr_24hr_Hartford            0:54       0.001
+SCS_Type_III_1yr_24hr_Hartford            1:00       0.001
+SCS_Type_III_1yr_24hr_Hartford            1:06       0.001
+SCS_Type_III_1yr_24hr_Hartford            1:12       0.001
+SCS_Type_III_1yr_24hr_Hartford            1:18       0.001
+SCS_Type_III_1yr_24hr_Hartford            1:24       0.001
+SCS_Type_III_1yr_24hr_Hartford            1:30       0.001
+SCS_Type_III_1yr_24hr_Hartford            1:36       0.001
+SCS_Type_III_1yr_24hr_Hartford            1:42       0.001
+SCS_Type_III_1yr_24hr_Hartford            1:48       0.001
+SCS_Type_III_1yr_24hr_Hartford            1:54       0.001
+SCS_Type_III_1yr_24hr_Hartford            2:00       0.00101
+SCS_Type_III_1yr_24hr_Hartford            2:06       0.00102
+SCS_Type_III_1yr_24hr_Hartford            2:12       0.00104
+SCS_Type_III_1yr_24hr_Hartford            2:18       0.00105
+SCS_Type_III_1yr_24hr_Hartford            2:24       0.00107
+SCS_Type_III_1yr_24hr_Hartford            2:30       0.00108
+SCS_Type_III_1yr_24hr_Hartford            2:36       0.0011
+SCS_Type_III_1yr_24hr_Hartford            2:42       0.00111
+SCS_Type_III_1yr_24hr_Hartford            2:48       0.00113
+SCS_Type_III_1yr_24hr_Hartford            2:54       0.00114
+SCS_Type_III_1yr_24hr_Hartford            3:00       0.00116
+SCS_Type_III_1yr_24hr_Hartford            3:06       0.00117
+SCS_Type_III_1yr_24hr_Hartford            3:12       0.00119
+SCS_Type_III_1yr_24hr_Hartford            3:18       0.0012
+SCS_Type_III_1yr_24hr_Hartford            3:24       0.00122
+SCS_Type_III_1yr_24hr_Hartford            3:30       0.00123
+SCS_Type_III_1yr_24hr_Hartford            3:36       0.00125
+SCS_Type_III_1yr_24hr_Hartford            3:42       0.00126
+SCS_Type_III_1yr_24hr_Hartford            3:48       0.00128
+SCS_Type_III_1yr_24hr_Hartford            3:54       0.00129
+SCS_Type_III_1yr_24hr_Hartford            4:00       0.00131
+SCS_Type_III_1yr_24hr_Hartford            4:06       0.00132
+SCS_Type_III_1yr_24hr_Hartford            4:12       0.00134
+SCS_Type_III_1yr_24hr_Hartford            4:18       0.00135
+SCS_Type_III_1yr_24hr_Hartford            4:24       0.00137
+SCS_Type_III_1yr_24hr_Hartford            4:30       0.00138
+SCS_Type_III_1yr_24hr_Hartford            4:36       0.0014
+SCS_Type_III_1yr_24hr_Hartford            4:42       0.00141
+SCS_Type_III_1yr_24hr_Hartford            4:48       0.00143
+SCS_Type_III_1yr_24hr_Hartford            4:54       0.00144
+SCS_Type_III_1yr_24hr_Hartford            5:00       0.00146
+SCS_Type_III_1yr_24hr_Hartford            5:06       0.00147
+SCS_Type_III_1yr_24hr_Hartford            5:12       0.00149
+SCS_Type_III_1yr_24hr_Hartford            5:18       0.0015
+SCS_Type_III_1yr_24hr_Hartford            5:24       0.00152
+SCS_Type_III_1yr_24hr_Hartford            5:30       0.00153
+SCS_Type_III_1yr_24hr_Hartford            5:36       0.00155
+SCS_Type_III_1yr_24hr_Hartford            5:42       0.00156
+SCS_Type_III_1yr_24hr_Hartford            5:48       0.00158
+SCS_Type_III_1yr_24hr_Hartford            5:54       0.00159
+SCS_Type_III_1yr_24hr_Hartford            6:00       0.00163
+SCS_Type_III_1yr_24hr_Hartford            6:06       0.00167
+SCS_Type_III_1yr_24hr_Hartford            6:12       0.00173
+SCS_Type_III_1yr_24hr_Hartford            6:18       0.00177
+SCS_Type_III_1yr_24hr_Hartford            6:24       0.00183
+SCS_Type_III_1yr_24hr_Hartford            6:30       0.00187
+SCS_Type_III_1yr_24hr_Hartford            6:36       0.00193
+SCS_Type_III_1yr_24hr_Hartford            6:42       0.00197
+SCS_Type_III_1yr_24hr_Hartford            6:48       0.00203
+SCS_Type_III_1yr_24hr_Hartford            6:54       0.00207
+SCS_Type_III_1yr_24hr_Hartford            7:00       0.00213
+SCS_Type_III_1yr_24hr_Hartford            7:06       0.00217
+SCS_Type_III_1yr_24hr_Hartford            7:12       0.00223
+SCS_Type_III_1yr_24hr_Hartford            7:18       0.00227
+SCS_Type_III_1yr_24hr_Hartford            7:24       0.00233
+SCS_Type_III_1yr_24hr_Hartford            7:30       0.00237
+SCS_Type_III_1yr_24hr_Hartford            7:36       0.00243
+SCS_Type_III_1yr_24hr_Hartford            7:42       0.00247
+SCS_Type_III_1yr_24hr_Hartford            7:48       0.00253
+SCS_Type_III_1yr_24hr_Hartford            7:54       0.00257
+SCS_Type_III_1yr_24hr_Hartford            8:00       0.00266
+SCS_Type_III_1yr_24hr_Hartford            8:06       0.00277
+SCS_Type_III_1yr_24hr_Hartford            8:12       0.00289
+SCS_Type_III_1yr_24hr_Hartford            8:18       0.003
+SCS_Type_III_1yr_24hr_Hartford            8:24       0.00312
+SCS_Type_III_1yr_24hr_Hartford            8:30       0.00323
+SCS_Type_III_1yr_24hr_Hartford            8:36       0.00335
+SCS_Type_III_1yr_24hr_Hartford            8:42       0.00346
+SCS_Type_III_1yr_24hr_Hartford            8:48       0.00358
+SCS_Type_III_1yr_24hr_Hartford            8:54       0.00369
+SCS_Type_III_1yr_24hr_Hartford            9:00       0.00381
+SCS_Type_III_1yr_24hr_Hartford            9:06       0.00392
+SCS_Type_III_1yr_24hr_Hartford            9:12       0.00404
+SCS_Type_III_1yr_24hr_Hartford            9:18       0.00415
+SCS_Type_III_1yr_24hr_Hartford            9:24       0.00427
+SCS_Type_III_1yr_24hr_Hartford            9:30       0.00438
+SCS_Type_III_1yr_24hr_Hartford            9:36       0.0045
+SCS_Type_III_1yr_24hr_Hartford            9:42       0.00461
+SCS_Type_III_1yr_24hr_Hartford            9:48       0.00473
+SCS_Type_III_1yr_24hr_Hartford            9:54       0.00484
+SCS_Type_III_1yr_24hr_Hartford            10:00      0.00502
+SCS_Type_III_1yr_24hr_Hartford            10:06      0.00526
+SCS_Type_III_1yr_24hr_Hartford            10:12      0.0055
+SCS_Type_III_1yr_24hr_Hartford            10:18      0.00574
+SCS_Type_III_1yr_24hr_Hartford            10:24      0.00598
+SCS_Type_III_1yr_24hr_Hartford            10:30      0.00622
+SCS_Type_III_1yr_24hr_Hartford            10:36      0.00646
+SCS_Type_III_1yr_24hr_Hartford            10:42      0.0067
+SCS_Type_III_1yr_24hr_Hartford            10:48      0.00694
+SCS_Type_III_1yr_24hr_Hartford            10:54      0.00718
+SCS_Type_III_1yr_24hr_Hartford            11:00      0.00776
+SCS_Type_III_1yr_24hr_Hartford            11:06      0.00868
+SCS_Type_III_1yr_24hr_Hartford            11:12      0.0096
+SCS_Type_III_1yr_24hr_Hartford            11:18      0.01052
+SCS_Type_III_1yr_24hr_Hartford            11:24      0.01144
+SCS_Type_III_1yr_24hr_Hartford            11:30      0.0163
+SCS_Type_III_1yr_24hr_Hartford            11:36      0.0251
+SCS_Type_III_1yr_24hr_Hartford            11:42      0.0339
+SCS_Type_III_1yr_24hr_Hartford            11:48      0.0427
+SCS_Type_III_1yr_24hr_Hartford            11:54      0.084
+SCS_Type_III_1yr_24hr_Hartford            12:00      0.084
+SCS_Type_III_1yr_24hr_Hartford            12:06      0.0427
+SCS_Type_III_1yr_24hr_Hartford            12:12      0.0339
+SCS_Type_III_1yr_24hr_Hartford            12:18      0.0251
+SCS_Type_III_1yr_24hr_Hartford            12:24      0.0163
+SCS_Type_III_1yr_24hr_Hartford            12:30      0.01144
+SCS_Type_III_1yr_24hr_Hartford            12:36      0.01052
+SCS_Type_III_1yr_24hr_Hartford            12:42      0.0096
+SCS_Type_III_1yr_24hr_Hartford            12:48      0.00868
+SCS_Type_III_1yr_24hr_Hartford            12:54      0.00776
+SCS_Type_III_1yr_24hr_Hartford            13:00      0.00718
+SCS_Type_III_1yr_24hr_Hartford            13:06      0.00694
+SCS_Type_III_1yr_24hr_Hartford            13:12      0.0067
+SCS_Type_III_1yr_24hr_Hartford            13:18      0.00646
+SCS_Type_III_1yr_24hr_Hartford            13:24      0.00622
+SCS_Type_III_1yr_24hr_Hartford            13:30      0.00598
+SCS_Type_III_1yr_24hr_Hartford            13:36      0.00574
+SCS_Type_III_1yr_24hr_Hartford            13:42      0.0055
+SCS_Type_III_1yr_24hr_Hartford            13:48      0.00526
+SCS_Type_III_1yr_24hr_Hartford            13:54      0.00502
+SCS_Type_III_1yr_24hr_Hartford            14:00      0.00484
+SCS_Type_III_1yr_24hr_Hartford            14:06      0.00473
+SCS_Type_III_1yr_24hr_Hartford            14:12      0.00461
+SCS_Type_III_1yr_24hr_Hartford            14:18      0.0045
+SCS_Type_III_1yr_24hr_Hartford            14:24      0.00438
+SCS_Type_III_1yr_24hr_Hartford            14:30      0.00427
+SCS_Type_III_1yr_24hr_Hartford            14:36      0.00415
+SCS_Type_III_1yr_24hr_Hartford            14:42      0.00404
+SCS_Type_III_1yr_24hr_Hartford            14:48      0.00392
+SCS_Type_III_1yr_24hr_Hartford            14:54      0.00381
+SCS_Type_III_1yr_24hr_Hartford            15:00      0.00369
+SCS_Type_III_1yr_24hr_Hartford            15:06      0.00358
+SCS_Type_III_1yr_24hr_Hartford            15:12      0.00346
+SCS_Type_III_1yr_24hr_Hartford            15:18      0.00335
+SCS_Type_III_1yr_24hr_Hartford            15:24      0.00323
+SCS_Type_III_1yr_24hr_Hartford            15:30      0.00312
+SCS_Type_III_1yr_24hr_Hartford            15:36      0.003
+SCS_Type_III_1yr_24hr_Hartford            15:42      0.00289
+SCS_Type_III_1yr_24hr_Hartford            15:48      0.00277
+SCS_Type_III_1yr_24hr_Hartford            15:54      0.00266
+SCS_Type_III_1yr_24hr_Hartford            16:00      0.00258
+SCS_Type_III_1yr_24hr_Hartford            16:06      0.00252
+SCS_Type_III_1yr_24hr_Hartford            16:12      0.00248
+SCS_Type_III_1yr_24hr_Hartford            16:18      0.00242
+SCS_Type_III_1yr_24hr_Hartford            16:24      0.00238
+SCS_Type_III_1yr_24hr_Hartford            16:30      0.00232
+SCS_Type_III_1yr_24hr_Hartford            16:36      0.00228
+SCS_Type_III_1yr_24hr_Hartford            16:42      0.00222
+SCS_Type_III_1yr_24hr_Hartford            16:48      0.00218
+SCS_Type_III_1yr_24hr_Hartford            16:54      0.00212
+SCS_Type_III_1yr_24hr_Hartford            17:00      0.00208
+SCS_Type_III_1yr_24hr_Hartford            17:06      0.00202
+SCS_Type_III_1yr_24hr_Hartford            17:12      0.00198
+SCS_Type_III_1yr_24hr_Hartford            17:18      0.00192
+SCS_Type_III_1yr_24hr_Hartford            17:24      0.00188
+SCS_Type_III_1yr_24hr_Hartford            17:30      0.00182
+SCS_Type_III_1yr_24hr_Hartford            17:36      0.00178
+SCS_Type_III_1yr_24hr_Hartford            17:42      0.00172
+SCS_Type_III_1yr_24hr_Hartford            17:48      0.00168
+SCS_Type_III_1yr_24hr_Hartford            17:54      0.00162
+SCS_Type_III_1yr_24hr_Hartford            18:00      0.00159
+SCS_Type_III_1yr_24hr_Hartford            18:06      0.00158
+SCS_Type_III_1yr_24hr_Hartford            18:12      0.00156
+SCS_Type_III_1yr_24hr_Hartford            18:18      0.00155
+SCS_Type_III_1yr_24hr_Hartford            18:24      0.00153
+SCS_Type_III_1yr_24hr_Hartford            18:30      0.00152
+SCS_Type_III_1yr_24hr_Hartford            18:36      0.0015
+SCS_Type_III_1yr_24hr_Hartford            18:42      0.00149
+SCS_Type_III_1yr_24hr_Hartford            18:48      0.00147
+SCS_Type_III_1yr_24hr_Hartford            18:54      0.00146
+SCS_Type_III_1yr_24hr_Hartford            19:00      0.00144
+SCS_Type_III_1yr_24hr_Hartford            19:06      0.00143
+SCS_Type_III_1yr_24hr_Hartford            19:12      0.00141
+SCS_Type_III_1yr_24hr_Hartford            19:18      0.0014
+SCS_Type_III_1yr_24hr_Hartford            19:24      0.00138
+SCS_Type_III_1yr_24hr_Hartford            19:30      0.00137
+SCS_Type_III_1yr_24hr_Hartford            19:36      0.00135
+SCS_Type_III_1yr_24hr_Hartford            19:42      0.00134
+SCS_Type_III_1yr_24hr_Hartford            19:48      0.00132
+SCS_Type_III_1yr_24hr_Hartford            19:54      0.00131
+SCS_Type_III_1yr_24hr_Hartford            20:00      0.00129
+SCS_Type_III_1yr_24hr_Hartford            20:06      0.00129
+SCS_Type_III_1yr_24hr_Hartford            20:12      0.00127
+SCS_Type_III_1yr_24hr_Hartford            20:18      0.00126
+SCS_Type_III_1yr_24hr_Hartford            20:24      0.00125
+SCS_Type_III_1yr_24hr_Hartford            20:30      0.00124
+SCS_Type_III_1yr_24hr_Hartford            20:36      0.00122
+SCS_Type_III_1yr_24hr_Hartford            20:42      0.00122
+SCS_Type_III_1yr_24hr_Hartford            20:48      0.0012
+SCS_Type_III_1yr_24hr_Hartford            20:54      0.0012
+SCS_Type_III_1yr_24hr_Hartford            21:00      0.00118
+SCS_Type_III_1yr_24hr_Hartford            21:06      0.00117
+SCS_Type_III_1yr_24hr_Hartford            21:12      0.00116
+SCS_Type_III_1yr_24hr_Hartford            21:18      0.00115
+SCS_Type_III_1yr_24hr_Hartford            21:24      0.00113
+SCS_Type_III_1yr_24hr_Hartford            21:30      0.00113
+SCS_Type_III_1yr_24hr_Hartford            21:36      0.00111
+SCS_Type_III_1yr_24hr_Hartford            21:42      0.00111
+SCS_Type_III_1yr_24hr_Hartford            21:48      0.00109
+SCS_Type_III_1yr_24hr_Hartford            21:54      0.00108
+SCS_Type_III_1yr_24hr_Hartford            22:00      0.00107
+SCS_Type_III_1yr_24hr_Hartford            22:06      0.00106
+SCS_Type_III_1yr_24hr_Hartford            22:12      0.00104
+SCS_Type_III_1yr_24hr_Hartford            22:18      0.00104
+SCS_Type_III_1yr_24hr_Hartford            22:24      0.00102
+SCS_Type_III_1yr_24hr_Hartford            22:30      0.00102
+SCS_Type_III_1yr_24hr_Hartford            22:36      0.001
+SCS_Type_III_1yr_24hr_Hartford            22:42      0.00099
+SCS_Type_III_1yr_24hr_Hartford            22:48      0.00098
+SCS_Type_III_1yr_24hr_Hartford            22:54      0.00097
+SCS_Type_III_1yr_24hr_Hartford            23:00      0.00095
+SCS_Type_III_1yr_24hr_Hartford            23:06      0.00095
+SCS_Type_III_1yr_24hr_Hartford            23:12      0.00093
+SCS_Type_III_1yr_24hr_Hartford            23:18      0.00093
+SCS_Type_III_1yr_24hr_Hartford            23:24      0.00091
+SCS_Type_III_1yr_24hr_Hartford            23:30      0.0009
+SCS_Type_III_1yr_24hr_Hartford            23:36      0.00089
+SCS_Type_III_1yr_24hr_Hartford            23:42      0.00088
+SCS_Type_III_1yr_24hr_Hartford            23:48      0.00086
+SCS_Type_III_1yr_24hr_Hartford            23:54      0.00086
 
 [PATTERNS]
 ;;Name           Type       Multipliers
@@ -664,146 +664,146 @@ DIMENSIONS -7770156.274 4952553.045 -7762010.832 4960486.033
 Units      Feet
 
 [COORDINATES]
-;;Node           X-Coord            Y-Coord           
+;;Node           X-Coord            Y-Coord
 ;;-------------- ------------------ ------------------
-J1               -7766892.916       4955990.719       
-J10              -7766599.569       4956217.677       
-J11              -7766935.979       4956269.093       
-J12              -7767265.045       4956504.140       
-J13              -7767463.365       4956836.143       
-J14              -7767503.029       4956981.579       
-J15              -7767460.427       4957304.768       
-J16              -7767370.816       4957456.079       
-J17              -7767403.135       4957589.762       
-J18              -7765571.087       4957921.628       
-J19              -7765664.916       4957699.641       
-J2               -7766587.413       4956035.685       
-J20              -7765849.397       4957315.824       
-J21              -7766005.907       4956967.313       
-J22              -7766205.008       4956505.030       
-J23              -7766643.686       4956764.841       
-J24              -7767163.924       4956431.938       
-J25              -7766232.846       4956451.903       
-J26              -7766264.069       4956540.044       
-J27              -7767164.053       4956648.785       
-J28              -7764994.055       4957795.794       
-J29              -7766293.067       4957457.407       
-J3               -7766247.600       4956104.480       
-J30              -7765557.566       4956794.617       
-J31              -7765339.433       4957170.758       
-J32              -7765728.158       4957236.477       
-J33              -7765788.284       4956884.143       
-J34              -7765919.729       4957159.232       
-J35              -7766791.557       4957160.883       
-J36              -7766508.837       4957757.586       
-J37              -7766319.624       4957982.300       
-J38              -7766346.194       4958141.707       
-J39              -7766830.638       4957971.216       
-INT_CSO3         -7765902.031       4956141.907       
-J40              -7766164.503       4954979.361       
-J41              -7765567.274       4956132.999       
-J42              -7765457.173       4955011.193       
-INT_CSO4         -7766965.201       4956529.896       
-J44              -7767354.338       4956653.653       
-J5               -7765693.389       4956107.102       
-J6               -7765702.647       4956148.100       
-J7               -7765332.341       4956181.163       
-J8               -7765321.761       4956050.233       
-J9               -7764703.278       4956011.293       
-WESTRIVER_TP     -7767004.221       4957923.357       
-EASTRIVER_TP     -7766513.348       4958414.231       
-CSO3             -7765892.838       4956222.517       
-CSO4             -7767004.156       4956453.730       
-WESTRIVER_GRAVITY_BYPASS -7767229.403       4957653.059       
-EASTRIVER_GRAVITY_BYPASS -7766599.772       4958274.173       
-CSO9             -7766308.021       4956305.050       
-WATER_SUPPLY_RESERVOIR -7764565.278       4955953.689       
-WR_WET_WELL      -7767319.592       4957701.721       
-ER_WETWELL       -7766273.998       4958186.010       
-OLD_WWTP_PRIMARY_TANK -7767231.350       4956447.167       
+J1               -7766892.916       4955990.719
+J10              -7766599.569       4956217.677
+J11              -7766935.979       4956269.093
+J12              -7767265.045       4956504.140
+J13              -7767463.365       4956836.143
+J14              -7767503.029       4956981.579
+J15              -7767460.427       4957304.768
+J16              -7767370.816       4957456.079
+J17              -7767403.135       4957589.762
+J18              -7765571.087       4957921.628
+J19              -7765664.916       4957699.641
+J2               -7766587.413       4956035.685
+J20              -7765849.397       4957315.824
+J21              -7766005.907       4956967.313
+J22              -7766205.008       4956505.030
+J23              -7766643.686       4956764.841
+J24              -7767163.924       4956431.938
+J25              -7766232.846       4956451.903
+J26              -7766264.069       4956540.044
+J27              -7767164.053       4956648.785
+J28              -7764994.055       4957795.794
+J29              -7766293.067       4957457.407
+J3               -7766247.600       4956104.480
+J30              -7765557.566       4956794.617
+J31              -7765339.433       4957170.758
+J32              -7765728.158       4957236.477
+J33              -7765788.284       4956884.143
+J34              -7765919.729       4957159.232
+J35              -7766791.557       4957160.883
+J36              -7766508.837       4957757.586
+J37              -7766319.624       4957982.300
+J38              -7766346.194       4958141.707
+J39              -7766830.638       4957971.216
+INT_CSO3         -7765902.031       4956141.907
+J40              -7766164.503       4954979.361
+J41              -7765567.274       4956132.999
+J42              -7765457.173       4955011.193
+INT_CSO4         -7766965.201       4956529.896
+J44              -7767354.338       4956653.653
+J5               -7765693.389       4956107.102
+J6               -7765702.647       4956148.100
+J7               -7765332.341       4956181.163
+J8               -7765321.761       4956050.233
+J9               -7764703.278       4956011.293
+WESTRIVER_TP     -7767004.221       4957923.357
+EASTRIVER_TP     -7766513.348       4958414.231
+CSO3             -7765892.838       4956222.517
+CSO4             -7767004.156       4956453.730
+WESTRIVER_GRAVITY_BYPASS -7767229.403       4957653.059
+EASTRIVER_GRAVITY_BYPASS -7766599.772       4958274.173
+CSO9             -7766308.021       4956305.050
+WATER_SUPPLY_RESERVOIR -7764565.278       4955953.689
+WR_WET_WELL      -7767319.592       4957701.721
+ER_WETWELL       -7766273.998       4958186.010
+OLD_WWTP_PRIMARY_TANK -7767231.350       4956447.167
 
 [VERTICES]
-;;Link           X-Coord            Y-Coord           
+;;Link           X-Coord            Y-Coord
 ;;-------------- ------------------ ------------------
-C1               -7764902.886       4956099.987       
-C1               -7765042.836       4956093.849       
-C11              -7767279.392       4957707.135       
-C20              -7766188.689       4957394.246       
-C20              -7766058.308       4957285.595       
-C24              -7765146.468       4957558.108       
-C24              -7765187.019       4957579.083       
-C24              -7765307.272       4957416.881       
-C24              -7765434.516       4957500.778       
-C24              -7765546.380       4957291.034       
-C24              -7765668.031       4957352.559       
-C24_2            -7767171.261       4956653.119       
-C24_2            -7767245.612       4956725.346       
-C24_2            -7767287.488       4956718.216       
-C24_2            -7767409.575       4957045.410       
-C24_2            -7767399.808       4957156.510       
-C24_2            -7767326.556       4957334.757       
-C24_2            -7767234.990       4957478.820       
-C24_2            -7767098.252       4957682.706       
-C24_2            -7766932.213       4957867.058       
-C24_3            -7766761.267       4956519.275       
-C24_3            -7766890.851       4956629.740       
-C24_5            -7766788.150       4958014.783       
-C24_5            -7766661.179       4958155.184       
-C24_5            -7766586.706       4958247.934       
-C24_5            -7766451.189       4958196.658       
-C24_5            -7766381.599       4958155.148       
-C25              -7766377.937       4958173.426       
-C27_1            -7765406.551       4957053.337       
-C27_1            -7765607.904       4957187.573       
-C28              -7767101.211       4956796.334       
-C28              -7767095.368       4956751.930       
-C29              -7766258.924       4958085.871       
-C3               -7765404.328       4955256.568       
-C3               -7765417.539       4955398.116       
-C3               -7765453.398       4955575.524       
-C3               -7765517.567       4955881.268       
-C3               -7765536.440       4956022.817       
-C30              -7766605.616       4957832.277       
-C30              -7766749.022       4957927.407       
-C31              -7766209.591       4955279.601       
-C31              -7766233.322       4955483.683       
-C31              -7766246.373       4955713.870       
-C31              -7766242.814       4955915.580       
-WESTRIVER_PUMP   -7767174.732       4957934.449       
-EASTRIVER_PUMP   -7766510.053       4958269.895       
-EMERGENCY_SPILLWAY -7764540.693       4956017.562       
-EMERGENCY_SPILLWAY -7764629.354       4956056.967       
+C1               -7764902.886       4956099.987
+C1               -7765042.836       4956093.849
+C11              -7767279.392       4957707.135
+C20              -7766188.689       4957394.246
+C20              -7766058.308       4957285.595
+C24              -7765146.468       4957558.108
+C24              -7765187.019       4957579.083
+C24              -7765307.272       4957416.881
+C24              -7765434.516       4957500.778
+C24              -7765546.380       4957291.034
+C24              -7765668.031       4957352.559
+C24_2            -7767171.261       4956653.119
+C24_2            -7767245.612       4956725.346
+C24_2            -7767287.488       4956718.216
+C24_2            -7767409.575       4957045.410
+C24_2            -7767399.808       4957156.510
+C24_2            -7767326.556       4957334.757
+C24_2            -7767234.990       4957478.820
+C24_2            -7767098.252       4957682.706
+C24_2            -7766932.213       4957867.058
+C24_3            -7766761.267       4956519.275
+C24_3            -7766890.851       4956629.740
+C24_5            -7766788.150       4958014.783
+C24_5            -7766661.179       4958155.184
+C24_5            -7766586.706       4958247.934
+C24_5            -7766451.189       4958196.658
+C24_5            -7766381.599       4958155.148
+C25              -7766377.937       4958173.426
+C27_1            -7765406.551       4957053.337
+C27_1            -7765607.904       4957187.573
+C28              -7767101.211       4956796.334
+C28              -7767095.368       4956751.930
+C29              -7766258.924       4958085.871
+C3               -7765404.328       4955256.568
+C3               -7765417.539       4955398.116
+C3               -7765453.398       4955575.524
+C3               -7765517.567       4955881.268
+C3               -7765536.440       4956022.817
+C30              -7766605.616       4957832.277
+C30              -7766749.022       4957927.407
+C31              -7766209.591       4955279.601
+C31              -7766233.322       4955483.683
+C31              -7766246.373       4955713.870
+C31              -7766242.814       4955915.580
+WESTRIVER_PUMP   -7767174.732       4957934.449
+EASTRIVER_PUMP   -7766510.053       4958269.895
+EMERGENCY_SPILLWAY -7764540.693       4956017.562
+EMERGENCY_SPILLWAY -7764629.354       4956056.967
 
 [Polygons]
-;;Subcatchment   X-Coord            Y-Coord           
+;;Subcatchment   X-Coord            Y-Coord
 ;;-------------- ------------------ ------------------
-1                -7764124.511       4956129.604       
-1                -7764124.511       4956129.604       
-1                -7763894.590       4956116.830       
-1                -7762272.365       4956040.190       
-1                -7762272.365       4954136.949       
-1                -7762681.114       4954060.309       
-1                -7763856.269       4954430.738       
-1                -7764456.620       4955171.597       
-1                -7764418.300       4955490.932       
-1                -7764137.285       4955490.932       
-1                -7764035.097       4955925.229       
+1                -7764124.511       4956129.604
+1                -7764124.511       4956129.604
+1                -7763894.590       4956116.830
+1                -7762272.365       4956040.190
+1                -7762272.365       4954136.949
+1                -7762681.114       4954060.309
+1                -7763856.269       4954430.738
+1                -7764456.620       4955171.597
+1                -7764418.300       4955490.932
+1                -7764137.285       4955490.932
+1                -7764035.097       4955925.229
 
-;;Storage Node   X-Coord            Y-Coord           
+;;Storage Node   X-Coord            Y-Coord
 ;;-------------- ------------------ ------------------
-WATER_SUPPLY_RESERVOIR -7764565.278       4955953.689       
-WR_WET_WELL      -7767319.592       4957701.721       
-ER_WETWELL       -7766273.998       4958186.010       
-OLD_WWTP_PRIMARY_TANK -7767231.350       4956447.167       
+WATER_SUPPLY_RESERVOIR -7764565.278       4955953.689
+WR_WET_WELL      -7767319.592       4957701.721
+ER_WETWELL       -7766273.998       4958186.010
+OLD_WWTP_PRIMARY_TANK -7767231.350       4956447.167
 
 [SYMBOLS]
-;;Gage           X-Coord            Y-Coord           
+;;Gage           X-Coord            Y-Coord
 ;;-------------- ------------------ ------------------
-Raingage         -7765912.348       4956100.164       
+Raingage         -7765912.348       4956100.164
 
 
 [PROFILES]
-;;Name           Links     
+;;Name           Links
 ;;-------------- ----------
 "SouthRiverInterceptor" C1 C2 C3_1 C3_2 C4
 "SouthRiverInterceptor" C5 C7 C6 C9 C10

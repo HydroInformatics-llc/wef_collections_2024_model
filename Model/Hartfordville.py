@@ -56,7 +56,7 @@ with Simulation('./Hartfordville_1.inp') as sim:
     # Pushing initial settings
     old_wwtp_primary_inflow.target_setting = 0
     old_wwtp_primary_dewater.target_setting = 0
-    lake_level_control_gate.target_setting = 0
+    lake_level_control_gate.target_setting = 0.2
 
     # Run Simulation
     sim.step_advance(300)
@@ -95,10 +95,14 @@ with Simulation('./Hartfordville_1.inp', \
     # Run Simulation
     sim.step_advance(300)
     for step in sim:
-        if C11_1.flow > 13:
-            delta_flow = ( C11_1.flow - 13 ) / 20 #
+        if wr_wet_well.depth >= 6:
+            # Emergency State
+            bridge_river_cross_pump.target_setting = 1
+        elif C11_1.flow > 12:
+            delta_flow = ( C11_1.flow - 12 ) / 20 #
+            #delta_flow *= 2 # Adjustment Factor
             if delta_flow > 1: delta_flow = 1
-
+            print(delta_flow * 20)
             bridge_river_cross_pump.target_setting = delta_flow
             #print(bridge_river_cross_pump.flow, wr_wet_well.depth)
         else:
@@ -141,7 +145,7 @@ profile_config = build_profile_plot(ax, mymodel, path_selection)
 add_hgl_plot(ax, profile_config, depth=profile_depths_no_control, label="No Control")
 add_hgl_plot(ax, profile_config, depth=profile_depths_w_control, color='green',label="With Control")
 add_node_labels_plot(ax, mymodel, profile_config)
-#add_link_labels_plot(ax, mymodel, profile_config)
+add_link_labels_plot(ax, mymodel, profile_config)
 leg = ax.legend()
 ax.grid('xy')
 ax.get_xaxis().set_ticklabels([])
