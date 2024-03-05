@@ -17,6 +17,8 @@ This scope of this code is to run the model as well as be a space where new cont
 logic can be developed to operate the various controllable facilities.
 """
 import datetime
+import warnings
+warnings.filterwarnings('ignore')
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from pyswmm import Simulation, Links, Nodes, SystemStats, RainGages
@@ -86,7 +88,7 @@ with Simulation('./Hartfordville_1.inp', \
     # Pushing initial settings
     old_wwtp_primary_inflow.target_setting = 0
     old_wwtp_primary_dewater.target_setting = 0
-    lake_level_control_gate.target_setting = 0
+    lake_level_control_gate.target_setting = 0.2
     cso_9_overflow_regulator.target_setting = 0
     cso_9_underflow_gate.target_setting = 0.5
 
@@ -106,8 +108,8 @@ with Simulation('./Hartfordville_1.inp', \
         if sim.current_time <= datetime.datetime(2024, 4, 9, 8, 0, 0):
             lake_level_control_gate.target_setting = 1
         else:
-            print(sim.current_time, water_res.volume*u_convert, water_res.depth)
-            lake_level_control_gate.target_setting = 0
+            #print(sim.current_time, water_res.volume*u_convert, water_res.depth)
+            lake_level_control_gate.target_setting = 0.2
 
     summary_model2 = post_process_table(sim)
 
@@ -131,15 +133,15 @@ rpt = swmmio.rpt("Hartfordville_ctrl.rpt")
 profile_depths_w_control = rpt.node_depth_summary.MaxNodeDepthReported
 
 mymodel = swmmio.Model(r"Hartfordville_1.inp")
-fig = plt.figure(figsize=(11,9))
+fig = plt.figure(figsize=(11,6))
 fig.suptitle("Max HGL")
-ax = fig.add_subplot(6,1,(1,3))
+ax = fig.add_subplot(6,1,(1,6))
 path_selection = find_network_trace(mymodel, 'WATER_SUPPLY_RESERVOIR', 'WESTRIVER_TP')
-# profile_config = build_profile_plot(ax, mymodel, path_selection)
-# add_hgl_plot(ax, profile_config, depth=profile_depths_no_control, label="No Control")
-# add_hgl_plot(ax, profile_config, depth=profile_depths_w_control, color='green',label="With Control")
-# add_node_labels_plot(ax, mymodel, profile_config)
-# add_link_labels_plot(ax, mymodel, profile_config)
+profile_config = build_profile_plot(ax, mymodel, path_selection)
+add_hgl_plot(ax, profile_config, depth=profile_depths_no_control, label="No Control")
+add_hgl_plot(ax, profile_config, depth=profile_depths_w_control, color='green',label="With Control")
+add_node_labels_plot(ax, mymodel, profile_config)
+#add_link_labels_plot(ax, mymodel, profile_config)
 leg = ax.legend()
 ax.grid('xy')
 ax.get_xaxis().set_ticklabels([])
