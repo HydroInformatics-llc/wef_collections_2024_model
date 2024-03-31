@@ -69,14 +69,14 @@ class ControlCurve():
             setting = y1 + y_delta * proportion
         return setting
 
-def profile_plots(rpt_path_base="Hartfordville_1.rpt", rpt_path_ctrl="Hartfordville_ctrl.rpt"):
+def profile_plots(inp_path_base=r"Hartfordville_1.inp", rpt_path_base="Hartfordville_1.rpt", rpt_path_ctrl="Hartfordville_ctrl.rpt"):
     # Profile Plotter Demo
     rpt = swmmio.rpt(rpt_path_base)
     profile_depths_no_control = rpt.node_depth_summary.MaxNodeDepthReported
     rpt = swmmio.rpt(rpt_path_ctrl)
     profile_depths_w_control = rpt.node_depth_summary.MaxNodeDepthReported
 
-    mymodel = swmmio.Model(r"Hartfordville_1.inp")
+    mymodel = swmmio.Model(inp_path_base)
     fig = plt.figure(figsize=(11,6))
     fig.suptitle("Max HGL")
     ax = fig.add_subplot(6,1,(1,6))
