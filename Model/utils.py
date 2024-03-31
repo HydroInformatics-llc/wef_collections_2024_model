@@ -69,11 +69,11 @@ class ControlCurve():
             setting = y1 + y_delta * proportion
         return setting
 
-def profile_plots():
+def profile_plots(rpt_path_base="Hartfordville_1.rpt", rpt_path_ctrl="Hartfordville_ctrl.rpt"):
     # Profile Plotter Demo
-    rpt = swmmio.rpt("Hartfordville_1.rpt")
+    rpt = swmmio.rpt(rpt_path_base)
     profile_depths_no_control = rpt.node_depth_summary.MaxNodeDepthReported
-    rpt = swmmio.rpt("Hartfordville_ctrl.rpt")
+    rpt = swmmio.rpt(rpt_path_ctrl)
     profile_depths_w_control = rpt.node_depth_summary.MaxNodeDepthReported
 
     mymodel = swmmio.Model(r"Hartfordville_1.inp")
@@ -91,6 +91,7 @@ def profile_plots():
     ax.get_xaxis().set_ticklabels([])
     ax.grid('xy')
     fig.tight_layout()
+    plt.show()
     fig.savefig("WRI_PROFILE.png")
     plt.close()
 
@@ -109,6 +110,7 @@ def profile_plots():
     ax.get_xaxis().set_ticklabels([])
     ax.grid('xy')
     fig.tight_layout()
+    plt.show()
     fig.savefig("CSO9_PROFILE.png")
     plt.close()
 
@@ -127,6 +129,7 @@ def profile_plots():
     ax.get_xaxis().set_ticklabels([])
     ax.grid('xy')
     fig.tight_layout()
+    plt.show()
     fig.savefig("ERI_PROFILE.png")
     plt.close()
 
