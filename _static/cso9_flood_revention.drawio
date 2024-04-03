@@ -1,0 +1,16 @@
+<mxfile host="app.diagrams.net" modified="2024-04-02T23:14:38.589Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="PXT3agvUHFw6msWyfNbR" version="24.2.1" type="device">
+  <diagram name="Page-1" id="GbqTOrsJC01MTlmypGBZ">
+    <mxGraphModel dx="954" dy="583" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="WTJ01US_HxRF4tWCxPZV-1" value="&lt;b&gt;&lt;u&gt;J21 / CSO 9 Flood Prevention&lt;/u&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Action:&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;b&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Inflatable Dam Control Curve Setting&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;( Depth at &lt;b&gt;J21&lt;/b&gt; )&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="470" y="200" width="290" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="WTJ01US_HxRF4tWCxPZV-3" value="&lt;b&gt;&lt;u&gt;CSO 4 Overflow Prevention&lt;/u&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Action:&lt;/div&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;b&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;/blockquote&gt;&lt;span style=&quot;text-align: left; background-color: initial;&quot;&gt;CSO 9 Underflow Regulator Control Curve Setting&lt;/span&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;( Target Depth &lt;b&gt;&lt;u&gt;&lt;font color=&quot;#ff3333&quot;&gt;???&lt;/font&gt;&lt;/u&gt;&lt;/b&gt; at CSO-4 Interceptor )&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="130" y="200" width="310" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

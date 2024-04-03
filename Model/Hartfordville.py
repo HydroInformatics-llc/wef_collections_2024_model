@@ -35,12 +35,12 @@ with Simulation('./Hartfordville_1.inp') as sim:
     sim.step_advance(300)
     for ind, step in enumerate(sim):
         if ind == 0:
-            cso_9_overflow_regulator.target_setting = 0.0
             old_wwtp_primary_inflow.target_setting = 0
             old_wwtp_primary_dewater.target_setting = 0
             lake_level_control_gate.target_setting = 0.1
             cso_9_overflow_regulator.target_setting = 0.5
             cso_9_underflow_gate.target_setting = 1
+            bridge_river_cross_pump.target_setting = 0
 
     summary_model1 = post_process_table(sim)
 

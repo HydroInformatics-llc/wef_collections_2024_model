@@ -1,0 +1,38 @@
+<mxfile host="app.diagrams.net" modified="2024-04-02T20:47:06.189Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="VCQHkKeksETVs8qsGAoP" version="24.2.1" type="device">
+  <diagram name="Page-1" id="BEOtWtrRAJ6VqBJItWVp">
+    <mxGraphModel dx="954" dy="583" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="E_6_QBGJYu1oAPRV78Tx-1" value="&lt;b&gt;&lt;u&gt;Dewater Lake&lt;/u&gt;&lt;/b&gt;&lt;div&gt;(Lake level control gate open 100%)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="200" y="190" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="E_6_QBGJYu1oAPRV78Tx-2" value="&lt;div&gt;&lt;b&gt;&lt;u&gt;Hold Lake Level&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;(Lake level control gate open 20%)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="380" y="290" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="E_6_QBGJYu1oAPRV78Tx-3" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="E_6_QBGJYu1oAPRV78Tx-1" target="E_6_QBGJYu1oAPRV78Tx-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="330" as="sourcePoint" />
+            <mxPoint x="450" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E_6_QBGJYu1oAPRV78Tx-4" value="Storm has&amp;nbsp;&lt;div&gt;started&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="E_6_QBGJYu1oAPRV78Tx-3">
+          <mxGeometry x="-0.2936" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E_6_QBGJYu1oAPRV78Tx-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="E_6_QBGJYu1oAPRV78Tx-2" target="E_6_QBGJYu1oAPRV78Tx-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="330" as="sourcePoint" />
+            <mxPoint x="450" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E_6_QBGJYu1oAPRV78Tx-6" value="Forecasted Storm&lt;div&gt;in the next&amp;nbsp;&lt;b&gt;8 hours&lt;/b&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="E_6_QBGJYu1oAPRV78Tx-5">
+          <mxGeometry x="-0.1234" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
