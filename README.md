@@ -16,11 +16,37 @@ https://colab.research.google.com/drive/17u3CChouSLJPMtJqYV-S1Fnyl2q4uMZU?usp=sh
 
 ---
 
-The code and model were developed for the Water Environment Federation - Collection Systems and Stormwater Conference 2024. This concept was to create a real-world hydrologic and hydraulic network with some adverse hydraulic conditions (flooding, surcharging, combined sewer overflows). The attendees of the workshop will be guided to develop and leverage <u>existing</u> system assets within the hydraulic network by use of real time controls.
+The code and model were developed for the Water Environment Federation - Collection Systems and Stormwater Conference 2024. The objective was to create a real-world hydrologic and hydraulic network with some adverse hydraulic conditions (flooding, surcharging, combined sewer overflows). The attendees of the workshop are to be guided to develop and leverage <u>existing</u> system assets within the hydraulic network by use of real time controls.
 
-This scope of this code is to run the model as well as be a space where new control logic can be developed to operate the various controllable facilities.
+This scope of this code is to run the simulations where new control logic can be developed to operate the various controllable facilities.
 
----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### System Layout
 
@@ -30,13 +56,15 @@ This scope of this code is to run the model as well as be a space where new cont
 
 
 
+
+
 ![schematic](./_static/schematic.png)
 
 *Figure 2: Schematic version of the network which illustrates the control points available to manipulate (yellow flagged labeled sites).*
 
 #### Key System Layout Details
 
-- The city if serviced by two WWTPs
+- The city is serviced by two WWTPs
   - West River at 15 CFS peak | Gravity by-pass at 7ft wet-well depth
   - East River at 30 CFS peak | Gravity by-pass at 8ft wet-well depth
 - Three Combined Sewer Overflow points:
@@ -44,7 +72,7 @@ This scope of this code is to run the model as well as be a space where new cont
   - South side of the river - CSO-3 situated on the West River Interceptor
 - Nearby the river crossing the Old WWTP Primary Tanks are still connected to the system as "gravity flow in", "pump out." However, they are not used too frequently since there is a base cleaning cost ($7,000 per event). They can be used during emergencies. This tank is approximately 0.5MG capacity of usable storage.
 - River Crossing (can be pumped from South to the North side of the river). This was built when they were in the process of decommissioning the "Old WWTP" and after they expanded the East River TP
-- The city drinking water reservoir is in the Southeast of town and has a dewater control gate as well as an emergency overflow. Due to topography, the emergency overflow runs into the combined sewer system. There is also a railroad running along the southern shoreline with limits build opportunities. This lake has a continuous flow coming in all the time. 
+- The city drinking water reservoir is in the Southeast of town and has a dewater control gate as well as an emergency overflow. Due to topography, the emergency overflow runs into the combined sewer system. There is also a railroad running along the southern shoreline with limits build opportunities. This lake has a continuous flow coming in. 
 
 #### Hydraulic Constraint Challenges (Existing SOP)
 
@@ -103,7 +131,9 @@ Before the storm hits, and thanks to weather forecasting services, we can create
 
 #### Component #2 - CSO9 Regulator / Inflatable Dam to Protect Flooding and CSO4
 
-Two separate, but related, control strategies were designed to prevent both CSO4 and CSO9 from activating.  The concept here was to convey as much flow as possible through the East River Interceptor without activating CSO 4.  This was done through a control curve.  Furthermore, an emergency fail-safe was developed using the existing inflatable dam structure to prevent flooding at J21.  This was also implemented with a control curve.  This approach looked at the depths (using a newly telemetered level sensor) in the East River Intercept at CSO-4 and an additional sensor at J21 to track the level. 
+Two separate, but related, control strategies were designed to prevent both CSO4 and CSO9 from activating.  The concept here was to convey as much flow as possible through the East River Interceptor without activating CSO 4.  This was done through a control curve.  Furthermore, an emergency fail-safe was developed using the existing inflatable dam structure to prevent flooding at J21.  This was also implemented with a control curve.  This approach looked at the depths (using a newly telemetered level sensor) in the East River Intercept at CSO-4 and an additional sensor at J21 to track the level. The following map illustrates the control logic sensor locations.
+
+<img src="./_static/schematic-cso4-9.png" alt="schematic-cso4-9" style="zoom:60%;" />
 
 ![cso9_flood_revention](./_static/cso9_flood_revention.png)
 
@@ -111,7 +141,11 @@ Two separate, but related, control strategies were designed to prevent both CSO4
 
 The West River Gravity Bypass and CSO-3 are activated in the static settings condition since we are both trying to send too much flow to the West River WWTP and we are letting the HGL rise too high inside the West River Interceptor.  Using the Bridge River Crossing Pump, we can reduce the level in the wet well of the West River Treatment Plant and avoid the bypass.  However, if we send too much flow to the East River Interceptor, we run the risk of activating CSO-4 again.  This now adds in a very fine balance.  In the case of sending too much flow to East River Interceptor, the level in front of CSO-4 will rise causing the CSO-9 underflow regulator to close.  As this goes on, eventually, CSO-9 flood prevention logic will take over and CSO-9 will then be subject to an activation. 
 
-This is where a new and creative solution can be incorporated using the former WWTP Primary Tank.  Under extreme conditions taking place at `J21`, we can protect both CSO-4 and CSO-9 with emergency prevention logic.  See the following state machine:
+This is where a new and creative solution can be incorporated using the former WWTP Primary Tank.  Under extreme conditions taking place at `J21`, we can protect both CSO-4 and CSO-9 with emergency prevention logic.  The following schematics shows the each control point's sensor locations:
+
+![schematic-wri-max](./_static/schematic-wri-max.png)
+
+See the following state machine:
 
 ![bridge_crossing](./_static/bridge_crossing.png)
 
@@ -160,7 +194,7 @@ This is where a new and creative solution can be incorporated using the former W
 ## Reference Packages Used
 
 - SWMMIO
-- PySWMM
+- PySWMM (www.pyswmm.org)
 - Matplotlib
 
 
